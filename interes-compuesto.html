@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interés Compuesto - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .section-card {
+            background-color: var(--card-bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow-light);
+            margin-bottom: 2.5rem;
+        }
+        body.dark-mode .section-card {
+            background-color: var(--card-bg-dark);
+            box-shadow: var(--card-shadow-dark);
+        }
+        .sub-section {
+            border-left: 3px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .formula-box {
+            background-color: var(--formula-bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body.dark-mode .formula-box {
+            background-color: var(--formula-bg-dark);
+        }
+        .formula-box img {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .example {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+        }
+        body.dark-mode .example {
+            background-color: #1e293b;
+            border-left-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-blue-600 font-semibold">I. Compuesto</a>
+                <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-blue-600 font-semibold">I. Compuesto</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Interés Compuesto</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Análisis exhaustivo de los métodos de cálculo para el interés compuesto, el poder de la capitalización.</p>
+        </div>
+
+        <section id="teoria-interes-compuesto" class="section-card">
+            <h2><i data-lucide="calculator" class="inline-block mr-3"></i>Casos de Cálculo de Interés Compuesto</h2>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="book-marked" class="inline-block mr-2"></i>Glosario de Símbolos</h3>
+                <div class="variable-def">
+                    <p><b>P</b>: Capital Inicial, Valor Presente o Principal.</p>
+                    <p><b>S</b>: Monto Final, Valor Futuro o Montante.</p>
+                    <p><b>I</b>: Interés Compuesto Total (S - P).</p>
+                    <p><b>i</b>: Tasa de Interés Efectiva. Es la tasa que se aplica en cada período de capitalización.</p>
+                    <p><b>n</b>: Número de períodos de capitalización.</p>
+                    <p><b>j</b>: Tasa de Interés Nominal Anual.</p>
+                    <p><b>m</b>: Frecuencia de capitalización por año.</p>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital y Tasa Constantes</h3>
+                <p>Un único capital (P) se capitaliza a una tasa efectiva (i) constante durante n períodos. Si se parte de una tasa nominal (j) con capitalización (m), primero se calcula la tasa efectiva del período.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{j}{m}&space;\quad&space;,&space;\quad&space;S&space;=&space;P(1&plus;i)^n" title="i = j/m ; S = P(1+i)^n" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> P=5000, TNA=12% capitalizable mensualmente, por 2 años. ¿Monto e Interés?</p>
+                    <p>Calculamos la tasa efectiva mensual (TEM) y el número de períodos:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{0.12}{12}&space;=&space;0.01&space;\quad&space;,&space;\quad&space;n&space;=&space;2&space;\cdot&space;12&space;=&space;24" title="i = 0.12/12 = 0.01 ; n = 2*12 = 24" /></div>
+                    <p>Calculamos el monto final (S):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;5000(1&plus;0.01)^{24}&space;=&space;6348.67" title="S = 5000(1+0.01)^24 = 6348.67" /></div>
+                    <p>Calculamos el interés total (I):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;6348.67&space;-&space;5000&space;=&space;1348.67" title="I = 6348.67 - 5000 = 1348.67" /></div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital Constante y Tasa Variable</h3>
+                <p>El capital inicial se capitaliza sucesivamente con las distintas tasas efectivas de cada período.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&plus;i_1)^{n_1}(1&plus;i_2)^{n_2}...&space;(1&plus;i_k)^{n_k}" title="S = P(1+i1)^n1 * (1+i2)^n2 ..." /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> P=2000. TEA₁=8% (2 años), TEA₂=10% (3 años). ¿Monto final?</p>
+                    <p>Calculamos el monto final (S) aplicando cada tasa a su período:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;2000(1.08)^2(1.10)^3&space;=&space;3104.60" title="S = 2000(1.08)^2(1.10)^3 = 3104.60" /></div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital Variable y Tasa Constante</h3>
+                <p>Se utiliza una fecha focal para llevar todos los flujos de caja (depósitos/retiros) a un único punto en el tiempo.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S_{total}&space;=&space;\sum&space;Flujo_k(1&plus;i)^{n_k}" title="Stotal = Sum(Flujo_k * (1+i)^nk)" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Depósito 1000 hoy. Retiro 200 en 6 meses. Depósito 500 en 1 año. TEM=1%. ¿Monto total en 2 años (24 meses)? Fecha Focal: mes 24.</p>
+                    <p>Llevamos cada flujo a la fecha focal:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;1000(1.01)^{24}&space;-&space;200(1.01)^{18}&space;&plus;&space;500(1.01)^{12}" title="S = 1000(1.01)^24 - 200(1.01)^18 + 500(1.01)^12" /></div>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;1269.73&space;-&space;239.13&space;&plus;&space;563.41&space;=&space;1594.01" title="S = 1269.73 - 239.13 + 563.41 = 1594.01" /></div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="arrow-down-up" class="inline-block mr-2"></i>Interés Devengado en un Período Específico</h3>
+                <p>Es la diferencia entre el monto al final del período k y el monto al final del período k-1.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_k&space;=&space;S_k&space;-&space;S_{k-1}&space;=&space;P(1&plus;i)^{k-1}i" title="Ik = Sk - Sk-1" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> P=5000, TEA=8%. ¿Interés ganado solo durante el 4to año?</p>
+                    <p>Calculamos el interés del 4to período (I₄):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_4&space;=&space;5000(1.08)^{4-1}(0.08)&space;=&space;503.88" title="I_4 = 5000(1.08)^{4-1}(0.08) = 503.88" /></div>
+                    <p>O, calculando la diferencia de montos:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_4&space;=&space;5000(1.08)^4&space;-&space;5000(1.08)^3&space;=&space;6802.44&space;-&space;6298.56&space;=&space;503.88" title="I_4 = 5000(1.08)^4 - 5000(1.08)^3 = 503.88" /></div>
+                </div>
+            </div>
+            
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="scale" class="inline-block mr-2"></i>Ecuaciones de Equivalencia Financiera</h3>
+                <p>El principio es el mismo que en interés simple, pero usando capitalización compuesta. El resultado es consistente e independiente de la fecha focal.</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Se debe S/ 1000 en 1 año y S/ 1500 en 3 años. Se quiere saldar con un pago único (X) en 2 años. Con TEA=10%, ¿cuál es el pago único? (Fecha focal: año 2).</p>
+                    <p>Igualamos deudas y pagos en la fecha focal:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;1000(1.10)^1&space;&plus;&space;\frac{1500}{(1.10)^1}" title="X = 1000(1.10)^1 + 1500/(1.10)^1" /></div>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;1100&space;&plus;&space;1363.64&space;=&space;2463.64" title="X = 1100 + 1363.64 = 2463.64" /></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problemas-interes-compuesto" class="section-card">
+            <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Interés Compuesto</h2>
+            <div id="compound-problems-container" class="space-y-6"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/problems.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

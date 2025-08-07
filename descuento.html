@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento Bancario - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .section-card {
+            background-color: var(--card-bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow-light);
+            margin-bottom: 2.5rem;
+        }
+        body.dark-mode .section-card {
+            background-color: var(--card-bg-dark);
+            box-shadow: var(--card-shadow-dark);
+        }
+        .sub-section {
+            border-left: 3px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .formula-box {
+            background-color: var(--formula-bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body.dark-mode .formula-box {
+            background-color: var(--formula-bg-dark);
+        }
+        .formula-box img {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .example {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+        }
+        body.dark-mode .example {
+            background-color: #1e293b;
+            border-left-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="descuento.html" class="text-blue-600 font-semibold">Descuento</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <a href="descuento.html" class="block text-blue-600 font-semibold">Descuento</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Descuento Bancario</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Teoría y aplicación de las operaciones de descuento, una herramienta clave para anticipar liquidez.</p>
+        </div>
+
+        <section id="teoria-descuento" class="section-card">
+            <h2><i data-lucide="receipt" class="inline-block mr-3"></i>Fundamentos del Descuento</h2>
+            <p class="text-lg mb-6">El descuento es una operación financiera que consiste en **anticipar el valor de un título-valor** (como una letra de cambio o un pagaré) que tiene un vencimiento futuro. A cambio de adelantar el dinero, la entidad financiera cobra un interés por adelantado, el cual se denomina "descuento".</p>
+            
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2">Variables Clave</h3>
+                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                    <li><strong>Valor Nominal (S):</strong> Es el valor escrito en el documento, el monto que se pagaría en la fecha de vencimiento.</li>
+                    <li><strong>Valor Actual o Líquido (P):</strong> Es el dinero que efectivamente se recibe hoy después de restar el descuento.</li>
+                    <li><strong>Descuento (D):</strong> Es el interés cobrado por adelantado por la entidad financiera. Se cumple que D = S - P.</li>
+                    <li><strong>Tasa de Descuento (d):</strong> Es la tasa de interés que se aplica para calcular el descuento.</li>
+                    <li><strong>Tiempo (n):</strong> Es el plazo que falta para el vencimiento del título, contado desde el día del descuento.</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2">Tipos de Descuento</h3>
+                <p>Existen dos métodos principales para calcular el descuento, y la diferencia entre ellos es fundamental:</p>
+                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                    <li><strong>Descuento Racional (o Matemático):</strong> El descuento se calcula sobre el Valor Actual (P). Es el método más justo desde el punto de vista matemático, ya que el interés se calcula sobre el dinero que realmente se presta. Sin embargo, es el menos común en la práctica comercial.</li>
+                    <li><strong>Descuento Bancario (o Comercial):</strong> El descuento se calcula sobre el Valor Nominal (S) del título. Es el más utilizado por las entidades financieras porque genera un mayor rendimiento para ellas.</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2">Fórmulas y Ejemplo Comparativo</h3>
+                <p class="mb-4">Para ilustrar la diferencia, se descuenta una letra de S/ 10,000, 60 días antes de su vencimiento. La tasa de descuento anual (d) es del 18%.</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Descuento Racional -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-700">Descuento Racional</h4>
+                        <p class="mb-2">Fórmula de Valor Actual:</p>
+                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;\frac{S}{1&plus;d&space;\cdot&space;n}" /></div>
+                        <p><strong>Cálculo:</strong></p>
+                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;\frac{10000}{1&plus;(0.18&space;\cdot&space;\frac{60}{360})}&space;=&space;\frac{10000}{1.03}&space;=&space;9708.74" /></div>
+                        <p class="mt-2"><strong>Descuento (D = S - P):</strong> S/ 291.26</p>
+                    </div>
+                    <!-- Descuento Bancario -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-700">Descuento Bancario</h4>
+                        <p class="mb-2">Fórmula de Valor Actual:</p>
+                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;S(1-d&space;\cdot&space;n)" /></div>
+                        <p><strong>Cálculo:</strong></p>
+                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;10000(1-0.18&space;\cdot&space;\frac{60}{360})&space;=&space;10000(0.97)&space;=&space;9700" /></div>
+                        <p class="mt-2"><strong>Descuento (D = S*d*n):</strong> S/ 300.00</p>
+                    </div>
+                </div>
+                <div class="example mt-6">
+                    <p><strong>Conclusión del Ejemplo:</strong> Como se puede observar, el descuento bancario (S/ 300.00) es mayor que el racional (S/ 291.26). Esto significa que, con el método bancario, el cliente recibe menos dinero líquido (S/ 9,700 vs S/ 9,708.74). Esta diferencia ocurre porque la tasa de descuento bancario se aplica sobre un capital mayor (el Valor Nominal), lo que inherentemente genera un mayor rendimiento para la entidad financiera.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

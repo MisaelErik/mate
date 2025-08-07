@@ -1,0 +1,147 @@
+/* Estilos personalizados y fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color-light: #f8f9fa;
+    --text-color-light: #212529;
+    --card-bg-light: #ffffff;
+    --card-shadow-light: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+    --h2-color-light: #343a40;
+    --formula-bg-light: #e9ecef;
+    --solution-bg-light: #e9f7fd;
+    --solution-border-light: #007bff;
+
+    --bg-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --card-bg-dark: #1e1e1e;
+    --card-shadow-dark: 0 4px 6px rgba(255,255,255,0.05), 0 1px 3px rgba(255,255,255,0.1);
+    --h2-color-dark: #f8f9fa;
+    --formula-bg-dark: #2a2a2a;
+    --solution-bg-dark: #1c3a4a;
+    --solution-border-dark: #00aaff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--card-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg-dark);
+    box-shadow: var(--card-shadow-dark);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px -8px rgb(0 0 0 / 0.1);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--h2-color-light);
+    margin-bottom: 2rem;
+    border-left: 6px solid #007bff;
+    padding-left: 1.5rem;
+}
+
+body.dark-mode h2 {
+    color: var(--h2-color-dark);
+    border-left-color: var(--solution-border-dark);
+}
+
+.formula {
+    background-color: var(--formula-bg-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.dark-mode .formula {
+    background-color: var(--formula-bg-dark);
+}
+
+.formula img {
+    max-width: 100%;
+    height: auto;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.solution {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background-color: var(--solution-bg-light);
+    border-left: 5px solid var(--solution-border-light);
+    border-radius: 12px;
+}
+
+body.dark-mode .solution {
+    background-color: var(--solution-bg-dark);
+    border-left-color: var(--solution-border-dark);
+}
+
+.variable-def {
+    margin-bottom: 1rem;
+}
+
+.variable-def strong {
+    color: #0056b3;
+}
+
+body.dark-mode .variable-def strong {
+    color: #00aaff;
+}

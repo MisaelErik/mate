@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interés Simple - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .section-card {
+            background-color: var(--card-bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow-light);
+            margin-bottom: 2.5rem;
+        }
+        body.dark-mode .section-card {
+            background-color: var(--card-bg-dark);
+            box-shadow: var(--card-shadow-dark);
+        }
+        .sub-section {
+            border-left: 3px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .formula-box {
+            background-color: var(--formula-bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body.dark-mode .formula-box {
+            background-color: var(--formula-bg-dark);
+        }
+        .formula-box img {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .example {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+        }
+        body.dark-mode .example {
+            background-color: #1e293b;
+            border-left-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-blue-600 font-semibold">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-blue-600 font-semibold">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Interés Simple</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Aprende los fundamentos del interés simple y cómo aplicarlo en diferentes escenarios financieros.</p>
+        </div>
+
+        <section id="conceptos-clave" class="section-card">
+            <h2><i data-lucide="key" class="inline-block mr-3"></i>Conceptos Clave para Empezar</h2>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="dollar-sign" class="inline-block mr-2"></i>Capital (P)</h3>
+                <p>Imagina que es tu dinero inicial, la base de todo. Es la cantidad que prestas o inviertes al comienzo. Sin capital, no hay interés.</p>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="percent" class="inline-block mr-2"></i>Tasa de Interés (j)</h3>
+                <p>Es el "precio" del dinero. Se expresa como un porcentaje y representa cuánto ganarás (o pagarás) por cada 100 unidades de tu capital en un período determinado (generalmente un año).</p>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="calendar" class="inline-block mr-2"></i>Tiempo (n)</h3>
+                <p>Es el período durante el cual el dinero está prestado o invertido. En matemática financiera, el tiempo es oro, literalmente.</p>
+            </div>
+        </section>
+
+        <section id="linea-de-tiempo" class="section-card">
+            <h2><i data-lucide="git-commit" class="inline-block mr-3"></i>La Herramienta Esencial: La Línea de Tiempo</h2>
+            <p>La línea de tiempo (o diagrama de flujo de caja) es tu mejor amiga. Te permite visualizar el problema, ordenar los datos y entender hacia dónde se mueve el dinero. Una flecha hacia arriba representa un ingreso (depósito), y una flecha hacia abajo, un egreso (retiro o pago).</p>
+            <div class="formula-box">
+                <img src="https://i.imgur.com/rV5J4kH.png" alt="Línea de Tiempo" style="max-width: 100%; border-radius: 8px;"/>
+            </div>
+        </section>
+
+        <section id="construccion-formula" class="section-card">
+            <h2><i data-lucide="puzzle" class="inline-block mr-3"></i>Construyendo la Fórmula Básica</h2>
+            <p>En lugar de memorizar, entendamos la lógica. Si inviertes S/ 100 (P) a una tasa del 10% anual (j), después de 1 año (n=1) has ganado S/ 10. El cálculo es:</p>
+            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;100&space;\cdot&space;0.10&space;\cdot&space;1&space;=&space;10" title="I = 100 * 0.10 * 1 = 10" /></div>
+            <p>Si lo dejas por 3 años, ganas S/ 10 cada año, para un total de S/ 30. El interés simple no se capitaliza, por lo que siempre se calcula sobre el capital inicial.</p>
+            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;100&space;\cdot&space;0.10&space;\cdot&space;3&space;=&space;30" title="I = 100 * 0.10 * 3 = 30" /></div>
+            <p>De aquí nace la fórmula fundamental del interés simple:</p>
+            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;P&space;\cdot&space;j&space;\cdot&space;n" title="I = P * j * n" /></div>
+        </section>
+
+        <section id="regla-de-oro" class="section-card bg-yellow-100 dark:bg-yellow-900">
+            <h2 class="text-yellow-800 dark:text-yellow-200"><i data-lucide="alert-triangle" class="inline-block mr-3"></i>¡Cuidado! La Regla de Oro</h2>
+            <p class="text-yellow-700 dark:text-yellow-300">El error más común es no hacer coincidir las unidades de la tasa (j) y el tiempo (n). Si la tasa es anual, el tiempo debe estar en años. Si la tasa es mensual, el tiempo debe estar en meses. ¡Siempre deben hablar el mismo "idioma"!</p>
+        </section>
+
+        <section id="teoria-interes-simple" class="section-card">
+            <h2><i data-lucide="calculator" class="inline-block mr-3"></i>Casos de Cálculo Avanzados</h2>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital y Tasa Constantes</h3>
+                <p>El escenario más básico. Un único capital (P) se invierte a una única tasa de interés nominal (j) durante toda la operación.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;Pjn&space;\quad&space;;&space;\quad&space;S&space;=&space;P(1&plus;jn)" title="I = Pjn ; S = P(1+jn)" /></div>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital Constante y Tasa Variable</h3>
+                <p>El capital no cambia, pero la tasa sí. El interés total es la suma de los intereses calculados para cada tramo de tiempo con su tasa respectiva.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&space;&plus;&space;j_1n_1&space;&plus;&space;j_2n_2&space;&plus;&space;...&space;&plus;&space;j_kn_k)" title="S = P(1 + j1n1 + j2n2 + ...)" /></div>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital Variable y Tasa Constante</h3>
+                <p>Existen depósitos o retiros, por lo que el capital varía. Se utiliza el Método de los Números para simplificar el cálculo.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;\frac{\sum(Saldo_k&space;\cdot&space;Dias_k)}{DivisorFijo}&space;\quad&space;,&space;\quad&space;DivisorFijo&space;=&space;\frac{360}{j}" title="I = Sum(Saldo*Dias)/DivisorFijo" /></div>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="shuffle" class="inline-block mr-2"></i>Capital y Tasa Variables</h3>
+                <p>El caso más complejo. Tanto el capital como la tasa cambian. Se calcula el interés para cada saldo con su tasa correspondiente.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_{total}&space;=&space;\sum&space;I_k&space;=&space;\sum&space;\frac{P_k&space;\cdot&space;j_k&space;\cdot&space;n_k}{360}" title="Itotal = Sum(Pk * jk * nk / 360)" /></div>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="scale" class="inline-block mr-2"></i>Ecuaciones de Equivalencia Financiera</h3>
+                <p>Dos o más flujos de caja son equivalentes si sus valores, en una fecha común (fecha focal), son iguales.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?\sum&space;Deudas&space;en&space;Fecha&space;Focal&space;=&space;\sum&space;Pagos&space;en&space;Fecha&space;Focal" title="Sum(Deudas) = Sum(Pagos) en Fecha Focal" /></div>
+            </div>
+        </section>
+
+        <section id="problemas-interes-simple" class="section-card">
+            <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Interés Simple</h2>
+            <div id="simple-problems-container" class="space-y-6"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/problems.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

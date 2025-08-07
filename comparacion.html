@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación Gráfica - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .section-card {
+            background-color: var(--card-bg-light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow-light);
+            margin-bottom: 2.5rem;
+        }
+        body.dark-mode .section-card {
+            background-color: var(--card-bg-dark);
+            box-shadow: var(--card-shadow-dark);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <a href="comparacion.html" class="text-blue-600 font-semibold">Comparación</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <a href="descuento.html" class="block text-gray-600 hover:text-blue-600 transition">Descuento</a>
+            <a href="comparacion.html" class="block text-blue-600 font-semibold">Comparación</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Comparación Gráfica: Simple vs. Compuesto</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Una visualización clara del poder de la capitalización a lo largo del tiempo.</p>
+        </div>
+
+        <section id="grafico-comparativo" class="section-card">
+            <h2><i data-lucide="git-compare" class="inline-block mr-3"></i>Crecimiento de una Inversión</h2>
+            <p class="text-lg mb-6">La diferencia fundamental entre el interés simple y el compuesto radica en la <strong>capitalización</strong>. Mientras el interés simple siempre se calcula sobre el mismo capital inicial, generando un crecimiento lineal, el interés compuesto reinvierte los intereses ganados, lo que produce un crecimiento exponencial. A largo plazo, esta diferencia es inmensa.</p>
+            <div class="w-full h-auto">
+                <canvas id="interestChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Lógica del gráfico de comparación
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('interestChart')?.getContext('2d');
+            if (ctx) {
+                const principal = 1000;
+                const rate = 0.10; // 10%
+                const periods = 20;
+
+                let labels = [];
+                let simpleInterestData = [];
+                let compoundInterestData = [];
+
+                for (let i = 0; i <= periods; i++) {
+                    labels.push(`Año ${i}`);
+                    simpleInterestData.push(principal * (1 + rate * i));
+                    compoundInterestData.push(principal * Math.pow(1 + rate, i));
+                }
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Interés Compuesto',
+                            data: compoundInterestData,
+                            borderColor: '#2563eb',
+                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        }, {
+                            label: 'Interés Simple',
+                            data: simpleInterestData,
+                            borderColor: '#4b5563',
+                            backgroundColor: 'rgba(75, 85, 99, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Crecimiento de S/ 1,000 al 10% Anual',
+                                font: { size: 18 }
+                            },
+                            tooltip: { mode: 'index', intersect: false }
+                        },
+                        scales: {
+                            y: { title: { display: true, text: 'Monto Total (S/)' } },
+                            x: { title: { display: true, text: 'Años' } }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
