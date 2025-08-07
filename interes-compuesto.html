@@ -84,84 +84,99 @@
     <main class="container mx-auto px-6 py-12">
         <div class="text-center mb-16">
             <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Interés Compuesto</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Análisis exhaustivo de los métodos de cálculo para el interés compuesto, el poder de la capitalización.</p>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubre el poder de la capitalización y cómo el interés compuesto hace crecer tu dinero exponencialmente.</p>
         </div>
 
-        <section id="teoria-interes-compuesto" class="section-card">
-            <h2><i data-lucide="calculator" class="inline-block mr-3"></i>Casos de Cálculo de Interés Compuesto</h2>
-
+        <section id="conceptos-clave-compuesto" class="section-card">
+            <h2><i data-lucide="key" class="inline-block mr-3"></i>Conceptos Clave del Interés Compuesto</h2>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="book-marked" class="inline-block mr-2"></i>Glosario de Símbolos</h3>
-                <div class="variable-def">
-                    <p><b>P</b>: Capital Inicial, Valor Presente o Principal.</p>
-                    <p><b>S</b>: Monto Final, Valor Futuro o Montante.</p>
-                    <p><b>I</b>: Interés Compuesto Total (S - P).</p>
-                    <p><b>i</b>: Tasa de Interés Efectiva. Es la tasa que se aplica en cada período de capitalización.</p>
-                    <p><b>n</b>: Número de períodos de capitalización.</p>
-                    <p><b>j</b>: Tasa de Interés Nominal Anual.</p>
-                    <p><b>m</b>: Frecuencia de capitalización por año.</p>
-                </div>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>La Magia de la Capitalización</h3>
+                <p>A diferencia del interés simple, aquí los intereses generados en un período se suman al capital para el siguiente. Es decir, ¡ganas intereses sobre los intereses! Este es el secreto del crecimiento exponencial.</p>
             </div>
-
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital y Tasa Constantes</h3>
-                <p>Un único capital (P) se capitaliza a una tasa efectiva (i) constante durante n períodos. Si se parte de una tasa nominal (j) con capitalización (m), primero se calcula la tasa efectiva del período.</p>
-                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{j}{m}&space;\quad&space;,&space;\quad&space;S&space;=&space;P(1&plus;i)^n" title="i = j/m ; S = P(1+i)^n" /></div>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="percent" class="inline-block mr-2"></i>Tasa Efectiva (i)</h3>
+                <p>Es la tasa que realmente se aplica en cada período de capitalización. Si una tasa se capitaliza mensualmente, la tasa efectiva que se usa para el cálculo es mensual.</p>
+            </div>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="calendar-check" class="inline-block mr-2"></i>Período de Capitalización (n)</h3>
+                <p>Es el intervalo de tiempo al final del cual se calculan y se suman los intereses al capital. Puede ser mensual, trimestral, anual, etc.</p>
+            </div>
+        </section>
+
+        <section id="construccion-formula-compuesto" class="section-card">
+            <h2><i data-lucide="puzzle" class="inline-block mr-3"></i>Construyendo la Fórmula del Monto</h2>
+            <p>Imagina que inviertes S/ 100 (P) a una tasa efectiva del 10% (i) por período.</p>
+            <ul class="list-decimal list-inside space-y-2 mt-4">
+                <li><b>Al final del 1er período:</b> Ganas S/ 10 de interés. Tu nuevo monto es S/ 110. <br/> <span class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S_1&space;=&space;100(1&plus;0.10)&space;=&space;110" title="S1 = 100(1+0.10) = 110" /></span></li>
+                <li><b>Al final del 2do período:</b> Ahora calculas el 10% sobre S/ 110. Ganas S/ 11. Tu nuevo monto es S/ 121. <br/> <span class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S_2&space;=&space;110(1&plus;0.10)&space;=&space;100(1&plus;0.10)^2&space;=&space;121" title="S2 = 110(1+0.10) = 100(1+0.10)^2 = 121" /></span></li>
+                <li><b>Al final del 3er período:</b> Calculas el 10% sobre S/ 121. Ganas S/ 12.1. Tu nuevo monto es S/ 133.1. <br/> <span class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S_3&space;=&space;121(1&plus;0.10)&space;=&space;100(1&plus;0.10)^3&space;=&space;133.1" title="S3 = 121(1+0.10) = 100(1+0.10)^3 = 133.1" /></span></li>
+            </ul>
+            <p class="mt-4">Como puedes ver, el patrón nos lleva a la fórmula general del monto compuesto:</p>
+            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&plus;i)^n" title="S = P(1+i)^n" /></div>
+        </section>
+
+        <section id="tasa-nominal-efectiva" class="section-card bg-blue-50 dark:bg-blue-900">
+            <h2 class="text-blue-800 dark:text-blue-200"><i data-lucide="arrow-right-left" class="inline-block mr-3"></i>Tasa Nominal (j) vs. Tasa Efectiva (i)</h2>
+            <p class="text-blue-700 dark:text-blue-300">Una Tasa Nominal (j) es una tasa de referencia anual. Para usarla en la fórmula de interés compuesto, debes convertirla a una Tasa Efectiva (i) que corresponda al período de capitalización (m).</p>
+            <p class="text-blue-700 dark:text-blue-300 mt-2">La fórmula para esto es:</p>
+            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{j}{m}" title="i = j/m" /></div>
+            <div class="example">
+                <p><strong>Ejemplo:</strong> Si tienes una TNA (Tasa Nominal Anual) del 12% (j) que se capitaliza mensualmente (m=12), la tasa efectiva mensual (i) que usarás en tus cálculos es:</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{0.12}{12}&space;=&space;0.01&space;=&space;1\%" title="i = 0.12/12 = 0.01 = 1%" /></div>
+            </div>
+        </section>
+
+        <section id="teoria-interes-compuesto-avanzado" class="section-card">
+            <h2><i data-lucide="calculator" class="inline-block mr-3"></i>Casos de Cálculo Avanzados</h2>
+            <div class="sub-section">
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital (P) y Tasa (i) Constantes</h3>
+                <p>Un único capital se capitaliza a una tasa efectiva constante durante n períodos.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&plus;i)^n" title="S = P(1+i)^n" /></div>
                 <div class="example">
-                    <p><strong>Ejemplo:</strong> P=5000, TNA=12% capitalizable mensualmente, por 2 años. ¿Monto e Interés?</p>
-                    <p>Calculamos la tasa efectiva mensual (TEM) y el número de períodos:</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i&space;=&space;\frac{0.12}{12}&space;=&space;0.01&space;\quad&space;,&space;\quad&space;n&space;=&space;2&space;\cdot&space;12&space;=&space;24" title="i = 0.12/12 = 0.01 ; n = 2*12 = 24" /></div>
-                    <p>Calculamos el monto final (S):</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;5000(1&plus;0.01)^{24}&space;=&space;6348.67" title="S = 5000(1+0.01)^24 = 6348.67" /></div>
-                    <p>Calculamos el interés total (I):</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;6348.67&space;-&space;5000&space;=&space;1348.67" title="I = 6348.67 - 5000 = 1348.67" /></div>
+                    <p><strong>Ejemplo:</strong> Se depositan S/ 1,000 (P) durante 1 año (n) en un banco que paga una TEA del 12% (i). ¿Cuál es el monto final?</p>
+                    <p>Como la tasa y el tiempo están en la misma unidad (años), aplicamos la fórmula directamente:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;1000(1&plus;0.12)^1&space;=&space;1120" title="S = 1000(1+0.12)^1 = 1120" /></div>
                 </div>
             </div>
-
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital Constante y Tasa Variable</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital (P) Constante y Tasa (i) Variable</h3>
                 <p>El capital inicial se capitaliza sucesivamente con las distintas tasas efectivas de cada período.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&plus;i_1)^{n_1}(1&plus;i_2)^{n_2}...&space;(1&plus;i_k)^{n_k}" title="S = P(1+i1)^n1 * (1+i2)^n2 ..." /></div>
                 <div class="example">
-                    <p><strong>Ejemplo:</strong> P=2000. TEA₁=8% (2 años), TEA₂=10% (3 años). ¿Monto final?</p>
-                    <p>Calculamos el monto final (S) aplicando cada tasa a su período:</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;2000(1.08)^2(1.10)^3&space;=&space;3104.60" title="S = 2000(1.08)^2(1.10)^3 = 3104.60" /></div>
+                    <p><strong>Ejemplo:</strong> Se invierten S/ 5,000 (P) por 2 años. El primer año (n₁) la TEA es del 10% (i₁) y el segundo año (n₂) la TEA sube al 15% (i₂). ¿Cuál es el monto final?</p>
+                    <p>Se capitaliza el monto período por período con su tasa correspondiente:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;5000(1&plus;0.10)^1(1&plus;0.15)^1&space;=&space;6325" title="S = 5000(1+0.10)^1(1+0.15)^1 = 6325" /></div>
                 </div>
             </div>
-
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital Variable y Tasa Constante</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital (P) Variable y Tasa (i) Constante</h3>
                 <p>Se utiliza una fecha focal para llevar todos los flujos de caja (depósitos/retiros) a un único punto en el tiempo.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S_{total}&space;=&space;\sum&space;Flujo_k(1&plus;i)^{n_k}" title="Stotal = Sum(Flujo_k * (1+i)^nk)" /></div>
                 <div class="example">
-                    <p><strong>Ejemplo:</strong> Depósito 1000 hoy. Retiro 200 en 6 meses. Depósito 500 en 1 año. TEM=1%. ¿Monto total en 2 años (24 meses)? Fecha Focal: mes 24.</p>
-                    <p>Llevamos cada flujo a la fecha focal:</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;1000(1.01)^{24}&space;-&space;200(1.01)^{18}&space;&plus;&space;500(1.01)^{12}" title="S = 1000(1.01)^24 - 200(1.01)^18 + 500(1.01)^12" /></div>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;1269.73&space;-&space;239.13&space;&plus;&space;563.41&space;=&space;1594.01" title="S = 1269.73 - 239.13 + 563.41 = 1594.01" /></div>
+                    <p><strong>Ejemplo:</strong> Se deposita hoy S/ 2,000. Dentro de 3 meses, se retiran S/ 500. Si la cuenta paga una TEM del 2%, ¿cuál es el saldo después de 6 meses? (Fecha Focal: mes 6).</p>
+                    <p>Llevamos cada flujo a la fecha focal (mes 6):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;2000(1&plus;0.02)^6&space;-&space;500(1&plus;0.02)^3&space;=&space;2252.32&space;-&space;530.60&space;=&space;1721.72" title="S = 2000(1+0.02)^6 - 500(1+0.02)^3 = 1721.72" /></div>
                 </div>
             </div>
-
             <div class="sub-section">
                 <h3 class="text-xl font-bold mb-2"><i data-lucide="arrow-down-up" class="inline-block mr-2"></i>Interés Devengado en un Período Específico</h3>
                 <p>Es la diferencia entre el monto al final del período k y el monto al final del período k-1.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_k&space;=&space;S_k&space;-&space;S_{k-1}&space;=&space;P(1&plus;i)^{k-1}i" title="Ik = Sk - Sk-1" /></div>
                 <div class="example">
-                    <p><strong>Ejemplo:</strong> P=5000, TEA=8%. ¿Interés ganado solo durante el 4to año?</p>
-                    <p>Calculamos el interés del 4to período (I₄):</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_4&space;=&space;5000(1.08)^{4-1}(0.08)&space;=&space;503.88" title="I_4 = 5000(1.08)^{4-1}(0.08) = 503.88" /></div>
-                    <p>O, calculando la diferencia de montos:</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_4&space;=&space;5000(1.08)^4&space;-&space;5000(1.08)^3&space;=&space;6802.44&space;-&space;6298.56&space;=&space;503.88" title="I_4 = 5000(1.08)^4 - 5000(1.08)^3 = 503.88" /></div>
+                    <p><strong>Ejemplo:</strong> Con un capital de S/ 1,000 (P) y una TEM del 2% (i), ¿cuánto interés se ganó específicamente en el 4to mes?</p>
+                    <p>Calculamos el interés del 4to período (k=4):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_4&space;=&space;1000(1&plus;0.02)^{4-1}(0.02)&space;=&space;21.22" title="I_4 = 1000(1+0.02)^(4-1)*(0.02) = 21.22" /></div>
                 </div>
             </div>
-            
             <div class="sub-section">
                 <h3 class="text-xl font-bold mb-2"><i data-lucide="scale" class="inline-block mr-2"></i>Ecuaciones de Equivalencia Financiera</h3>
                 <p>El principio es el mismo que en interés simple, pero usando capitalización compuesta. El resultado es consistente e independiente de la fecha focal.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?\sum&space;Deudas&space;en&space;Fecha&space;Focal&space;=&space;\sum&space;Pagos&space;en&space;Fecha&space;Focal" title="Sum(Deudas) = Sum(Pagos) en Fecha Focal" /></div>
                 <div class="example">
-                    <p><strong>Ejemplo:</strong> Se debe S/ 1000 en 1 año y S/ 1500 en 3 años. Se quiere saldar con un pago único (X) en 2 años. Con TEA=10%, ¿cuál es el pago único? (Fecha focal: año 2).</p>
-                    <p>Igualamos deudas y pagos en la fecha focal:</p>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;1000(1.10)^1&space;&plus;&space;\frac{1500}{(1.10)^1}" title="X = 1000(1.10)^1 + 1500/(1.10)^1" /></div>
-                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;1100&space;&plus;&space;1363.64&space;=&space;2463.64" title="X = 1100 + 1363.64 = 2463.64" /></div>
+                    <p><strong>Ejemplo:</strong> Una deuda de S/ 5,000 debe pagarse en 2 años. Se acuerda liquidarla con un pago único (X) dentro de 6 meses. Con una TEA del 14%, ¿cuál es el valor del pago? (Fecha Focal: hoy, año 0).</p>
+                    <p>Igualamos el valor presente de la deuda con el valor presente del pago:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X(1&plus;0.14)^{-0.5}&space;=&space;5000(1&plus;0.14)^{-2}" title="X(1+0.14)^-0.5 = 5000(1+0.14)^-2" /></div>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;\frac{5000(1.14)^{-2}}{(1.14)^{-0.5}}&space;=&space;4133.53" title="X = 5000(1.14)^-2 / (1.14)^-0.5 = 4133.53" /></div>
                 </div>
             </div>
         </section>
@@ -169,6 +184,46 @@
         <section id="problemas-interes-compuesto" class="section-card">
             <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Interés Compuesto</h2>
             <div id="compound-problems-container" class="space-y-6"></div>
+        </section>
+
+        <section id="resumen-formulas-compuesto" class="section-card">
+            <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Resumen de Fórmulas de Interés Compuesto</h2>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción Corta</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + i)ⁿ</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto final o valor futuro.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">P = S(1 + i)⁻ⁿ</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el capital inicial o valor presente.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">i = j / m</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Convierte Tasa Nominal a Tasa Efectiva.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1+i₁)ⁿ¹(1+i₂)ⁿ²...</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto con tasa variable.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Iₖ = P(1+i)ᵏ⁻¹i</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el interés de un período específico.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Σ Deudas = Σ Pagos</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Principio para equivalencia financiera.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>

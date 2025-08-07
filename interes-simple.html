@@ -129,35 +129,106 @@
         <section id="teoria-interes-simple" class="section-card">
             <h2><i data-lucide="calculator" class="inline-block mr-3"></i>Casos de Cálculo Avanzados</h2>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital y Tasa Constantes</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="lock" class="inline-block mr-2"></i>Capital (P) y Tasa (j) Constantes</h3>
                 <p>El escenario más básico. Un único capital (P) se invierte a una única tasa de interés nominal (j) durante toda la operación.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;Pjn&space;\quad&space;;&space;\quad&space;S&space;=&space;P(1&plus;jn)" title="I = Pjn ; S = P(1+jn)" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Se invierten S/ 2,000 (P) a una TNA del 15% (j) por 180 días (n). ¿Interés y Monto?</p>
+                    <p>Primero, homogeneizamos tasa y tiempo a años:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?n&space;=&space;\frac{180}{360}&space;=&space;0.5&space;\text{&space;a\~nos}" title="n = 180/360 = 0.5 años" /></div>
+                    <p>Calculamos el interés (I):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;2000&space;\cdot&space;0.15&space;\cdot&space;0.5&space;=&space;150" title="I = 2000 * 0.15 * 0.5 = 150" /></div>
+                    <p>Calculamos el monto final (S):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;2000&space;&plus;&space;150&space;=&space;2150" title="S = 2000 + 150 = 2150" /></div>
+                </div>
             </div>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital Constante y Tasa Variable</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="trending-up" class="inline-block mr-2"></i>Capital (P) Constante y Tasa (j) Variable</h3>
                 <p>El capital no cambia, pero la tasa sí. El interés total es la suma de los intereses calculados para cada tramo de tiempo con su tasa respectiva.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;P(1&space;&plus;&space;j_1n_1&space;&plus;&space;j_2n_2&space;&plus;&space;...&space;&plus;&space;j_kn_k)" title="S = P(1 + j1n1 + j2n2 + ...)" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Un capital de S/ 5,000 (P) se coloca a una TNA del 12% (j₁) por 90 días (n₁), y luego la TNA cambia al 14% (j₂) por los siguientes 60 días (n₂). ¿Cuál es el monto final?</p>
+                    <p>Calculamos el monto final (S) aplicando cada tasa a su respectivo período:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;5000&space;\left(1&space;&plus;&space;0.12&space;\cdot&space;\frac{90}{360}&space;&plus;&space;0.14&space;\cdot&space;\frac{60}{360}\right)&space;=&space;5266.67" title="S = 5000 * (1 + 0.12*(90/360) + 0.14*(60/360)) = 5266.67" /></div>
+                </div>
             </div>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital Variable y Tasa Constante</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="repeat" class="inline-block mr-2"></i>Capital (P) Variable y Tasa (j) Constante</h3>
                 <p>Existen depósitos o retiros, por lo que el capital varía. Se utiliza el Método de los Números para simplificar el cálculo.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;\frac{\sum(Saldo_k&space;\cdot&space;Dias_k)}{DivisorFijo}&space;\quad&space;,&space;\quad&space;DivisorFijo&space;=&space;\frac{360}{j}" title="I = Sum(Saldo*Dias)/DivisorFijo" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Se abre una cuenta con S/ 2,000 (P₁) y una TNA del 18% (j). A los 40 días, se depositan S/ 1,000 adicionales (P₂). ¿Qué interés y monto se tiene a los 90 días?</p>
+                    <p>Calculamos el Divisor Fijo:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?DivisorFijo&space;=&space;\frac{360}{0.18}&space;=&space;2000" title="DivisorFijo = 360/0.18 = 2000" /></div>
+                    <p>Calculamos el interés (I) con el método de los números:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;\frac{(2000&space;\cdot&space;40)&space;&plus;&space;(3000&space;\cdot&space;50)}{2000}&space;=&space;115" title="I = (2000*40 + 3000*50)/2000 = 115" /></div>
+                    <p>Calculamos el monto final (S):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;3000&space;&plus;&space;115&space;=&space;3115" title="S = 3000 + 115 = 3115" /></div>
+                </div>
             </div>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2"><i data-lucide="shuffle" class="inline-block mr-2"></i>Capital y Tasa Variables</h3>
+                <h3 class="text-xl font-bold mb-2"><i data-lucide="shuffle" class="inline-block mr-2"></i>Capital (P) y Tasa (j) Variables</h3>
                 <p>El caso más complejo. Tanto el capital como la tasa cambian. Se calcula el interés para cada saldo con su tasa correspondiente.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I_{total}&space;=&space;\sum&space;I_k&space;=&space;\sum&space;\frac{P_k&space;\cdot&space;j_k&space;\cdot&space;n_k}{360}" title="Itotal = Sum(Pk * jk * nk / 360)" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Se deposita S/ 2,000 (P₁) con una TNA de 12% (j₁). 30 días después (n₁), se depositan S/ 1,000 (P₂=3000) y la TNA cambia a 15% (j₂). ¿Cuál es el monto 60 días después del segundo depósito (n₂)?</p>
+                    <p>Calculamos el interés total como la suma de los intereses de cada período:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?I&space;=&space;\left(2000&space;\cdot&space;0.12&space;\cdot&space;\frac{30}{360}\right)&space;&plus;&space;\left(3000&space;\cdot&space;0.15&space;\cdot&space;\frac{60}{360}\right)&space;=&space;20&space;&plus;&space;75&space;=&space;95" title="I = (2000*0.12*30/360) + (3000*0.15*60/360) = 95" /></div>
+                    <p>Calculamos el monto final (S):</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S&space;=&space;3000&space;&plus;&space;95&space;=&space;3095" title="S = 3000 + 95 = 3095" /></div>
+                </div>
             </div>
             <div class="sub-section">
                 <h3 class="text-xl font-bold mb-2"><i data-lucide="scale" class="inline-block mr-2"></i>Ecuaciones de Equivalencia Financiera</h3>
                 <p>Dos o más flujos de caja son equivalentes si sus valores, en una fecha común (fecha focal), son iguales.</p>
                 <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?\sum&space;Deudas&space;en&space;Fecha&space;Focal&space;=&space;\sum&space;Pagos&space;en&space;Fecha&space;Focal" title="Sum(Deudas) = Sum(Pagos) en Fecha Focal" /></div>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> Se debe pagar S/ 2,000 en 90 días. Se quiere saldar con un pago único (X) en 30 días. Con una TNA del 12%, ¿cuál es el valor del pago? (Fecha Focal: día 30).</p>
+                    <p>Para que los flujos sean equivalentes, descontamos la deuda al día 30:</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?X&space;=&space;\frac{2000}{1&space;&plus;&space;0.12&space;\cdot&space;\frac{60}{360}}&space;=&space;1960.78" title="X = 2000 / (1 + 0.12 * 60/360) = 1960.78" /></div>
+                </div>
             </div>
         </section>
 
         <section id="problemas-interes-simple" class="section-card">
             <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Interés Simple</h2>
             <div id="simple-problems-container" class="space-y-6"></div>
+        </section>
+
+        <section id="resumen-formulas-simple" class="section-card">
+            <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Resumen de Fórmulas de Interés Simple</h2>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción Corta</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">I = P · j · n</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el interés total generado.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + jn)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto final o valor futuro.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">P = S / (1 + jn)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el capital inicial o valor presente.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + j₁n₁ + j₂n₂...)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto con tasa variable.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Σ Deudas = Σ Pagos</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Principio para equivalencia financiera.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>
