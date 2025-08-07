@@ -37,7 +37,7 @@
         body.dark-mode .formula-box {
             background-color: var(--formula-bg-dark);
         }
-        .formula-box img {
+        .formula-box img, .summary-formula-img {
             background: white;
             padding: 10px 15px;
             border-radius: 5px;
@@ -186,6 +186,36 @@
             <div id="compound-problems-container" class="space-y-6"></div>
         </section>
 
+        <section id="glosario-compuesto" class="section-card">
+            <h2><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario de Términos</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                <div class="sub-section">
+                    <h3 class="font-bold">Capital (P)</h3>
+                    <p>La cantidad inicial de dinero invertida o prestada.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Interés (I)</h3>
+                    <p>El costo o rendimiento del dinero, que se reinvierte en cada período.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Monto (S)</h3>
+                    <p>El capital más los intereses capitalizados al final del período.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Tasa Efectiva (i)</h3>
+                    <p>La tasa real que se aplica en cada período de capitalización.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Tasa Nominal (j)</h3>
+                    <p>La tasa anual de referencia antes de considerar la frecuencia de capitalización.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Período de Capitalización (m)</h3>
+                    <p>La frecuencia con la que los intereses se suman al capital (ej. mensual, trimestral).</p>
+                </div>
+            </div>
+        </section>
+
         <section id="resumen-formulas-compuesto" class="section-card">
             <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Resumen de Fórmulas de Interés Compuesto</h2>
             <div class="overflow-x-auto mt-6">
@@ -198,35 +228,35 @@
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + i)ⁿ</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=P(1+i)^n" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular Monto (con tasa efectiva).</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + j/m)ⁿ</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=P(1+\frac{j}{m})^n" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular Monto (con tasa nominal).</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">P = S(1 + i)⁻ⁿ</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?P=S(1+i)^{-n}" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular Valor Presente.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">I = P((1 + i)ⁿ - 1)</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?I=P((1+i)^n-1)" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Interés.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">n = log(S/P) / log(1 + i)</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=\frac{Log(\frac{S}{P})}{Log(1+i)}" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Tiempo.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">i = (S/P)¹/ⁿ - 1</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?i=(\frac{S}{P})^{\frac{1}{n}}-1" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular la Tasa de Interés.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1+i₁)ⁿ¹(1+i₂)ⁿ²...</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=P(1+i_1)^{n_1}(1+i_2)^{n_2}..." /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Monto con Tasa Variable.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Σ Deudas = Σ Pagos</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?\sum Deudas = \sum Pagos" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Principio de Equivalencia Financiera.</td>
                         </tr>
                     </tbody>

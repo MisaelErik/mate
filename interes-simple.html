@@ -37,7 +37,7 @@
         body.dark-mode .formula-box {
             background-color: var(--formula-bg-dark);
         }
-        .formula-box img {
+        .formula-box img, .summary-formula-img {
             background: white;
             padding: 10px 15px;
             border-radius: 5px;
@@ -195,6 +195,36 @@
             <div id="simple-problems-container" class="space-y-6"></div>
         </section>
 
+        <section id="glosario-simple" class="section-card">
+            <h2><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario de Términos</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                <div class="sub-section">
+                    <h3 class="font-bold">Capital (P)</h3>
+                    <p>La cantidad inicial de dinero invertida o prestada.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Interés (I)</h3>
+                    <p>El costo o rendimiento del dinero, usualmente expresado como un porcentaje.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Monto (S)</h3>
+                    <p>El capital más los intereses generados al final del período.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Tasa Nominal (j)</h3>
+                    <p>La tasa de interés anual de referencia que no considera la capitalización.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Tiempo (n)</h3>
+                    <p>La duración de la inversión o préstamo, que debe estar en la misma unidad que la tasa.</p>
+                </div>
+                <div class="sub-section">
+                    <h3 class="font-bold">Fecha Focal</h3>
+                    <p>Una fecha de referencia elegida para hacer equivalentes varios flujos de caja.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="resumen-formulas-simple" class="section-card">
             <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Resumen de Fórmulas de Interés Simple</h2>
             <div class="overflow-x-auto mt-6">
@@ -207,35 +237,35 @@
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">I = P · j · n</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?I=P\cdot j \cdot n" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Interés.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + jn)</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=P(1+jn)" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Monto o Valor Futuro.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">P = S / (1 + jn)</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?P=\frac{S}{1+jn}" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Capital o Valor Presente.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">j = (S/P - 1) / n</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?j=\frac{\frac{S}{P}-1}{n}" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular la Tasa de Interés.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">n = (S/P - 1) / j</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=\frac{\frac{S}{P}-1}{j}" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Calcular el Tiempo.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + Σ(jₖnₖ))</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=P(1+\sum(j_kn_k))" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Monto con Tasa Variable.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">I = Σ(Pₖ₋₁ · jₖ · nₖ)</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?I=\sum(P_{k-1}\cdot j_k \cdot n_k)" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Interés con Capital y Tasa Variables.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Σ Deudas = Σ Pagos</td>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?\sum Deudas = \sum Pagos" /></td>
                             <td class="px-6 py-4 whitespace-nowrap">Principio de Equivalencia Financiera.</td>
                         </tr>
                     </tbody>
