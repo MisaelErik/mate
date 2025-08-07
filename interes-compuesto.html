@@ -189,37 +189,45 @@
         <section id="resumen-formulas-compuesto" class="section-card">
             <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Resumen de Fórmulas de Interés Compuesto</h2>
             <div class="overflow-x-auto mt-6">
-                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+                <table class="min-w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg">
                     <thead class="bg-gray-50 dark:bg-gray-700">
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción Corta</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + i)ⁿ</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto final o valor futuro.</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular Monto (con tasa efectiva).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1 + j/m)ⁿ</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular Monto (con tasa nominal).</td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">P = S(1 + i)⁻ⁿ</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Calcula el capital inicial o valor presente.</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular Valor Presente.</td>
                         </tr>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">i = j / m</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Convierte Tasa Nominal a Tasa Efectiva.</td>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">I = P((1 + i)ⁿ - 1)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular el Interés.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">n = log(S/P) / log(1 + i)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular el Tiempo.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">i = (S/P)¹/ⁿ - 1</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Calcular la Tasa de Interés.</td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">S = P(1+i₁)ⁿ¹(1+i₂)ⁿ²...</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Calcula el monto con tasa variable.</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Iₖ = P(1+i)ᵏ⁻¹i</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Calcula el interés de un período específico.</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Monto con Tasa Variable.</td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap font-mono text-blue-600 dark:text-blue-400">Σ Deudas = Σ Pagos</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Principio para equivalencia financiera.</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Principio de Equivalencia Financiera.</td>
                         </tr>
                     </tbody>
                 </table>

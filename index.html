@@ -73,23 +73,39 @@
             </a>
         </div>
 
-        <section id="marco-legal" class="section-card">
-            <h2><i data-lucide="gavel" class="inline-block mr-3"></i>Marco Legal y Regulatorio del Interés</h2>
-            <p class="mb-4">Las operaciones de interés no ocurren en el vacío; están reguladas por un marco legal que busca proteger a los consumidores, asegurar la transparencia y mantener la estabilidad del sistema financiero. En la mayoría de los países, este marco es establecido por el Banco Central y superintendencias financieras.</p>
+        <section id="comparacion-interes" class="section-card">
+            <h2><i data-lucide="git-compare" class="inline-block mr-3"></i>Interés Simple vs. Interés Compuesto</h2>
+            <p class="mb-4">La diferencia fundamental radica en la <strong>capitalización</strong>. En el interés simple, los intereses se calculan siempre sobre el capital inicial. En el interés compuesto, los intereses generados se suman al capital en cada período, generando nuevos intereses sobre un monto mayor.</p>
             
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Tasas Máximas de Interés</h3>
-                <p>Para evitar la usura, las autoridades monetarias suelen fijar tasas de interés máximas para diferentes tipos de créditos (de consumo, microcréditos, etc.). Operar por encima de estas tasas es ilegal. Estas tasas se actualizan periódicamente en función de las condiciones del mercado.</p>
+                <h3 class="text-xl font-bold mb-2">Ejemplo Práctico</h3>
+                <p>Imagina que inviertes <strong>S/ 1,000</strong> a una tasa del <strong>10% anual</strong> durante <strong>3 años</strong>.</p>
+                <div class="grid md:grid-cols-2 gap-6 mt-4">
+                    <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                        <h4 class="font-bold text-blue-700 dark:text-blue-300">Con Interés Simple:</h4>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Año 1: Ganas S/ 100 (10% de 1,000). Total: S/ 1,100.</li>
+                            <li>Año 2: Ganas S/ 100 (10% de 1,000). Total: S/ 1,200.</li>
+                            <li>Año 3: Ganas S/ 100 (10% de 1,000). Total: <strong>S/ 1,300</strong>.</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-green-50 dark:bg-green-900 rounded-lg">
+                        <h4 class="font-bold text-green-700 dark:text-green-300">Con Interés Compuesto:</h4>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Año 1: Ganas S/ 100 (10% de 1,000). Total: S/ 1,100.</li>
+                            <li>Año 2: Ganas S/ 110 (10% de 1,100). Total: S/ 1,210.</li>
+                            <li>Año 3: Ganas S/ 121 (10% de 1,210). Total: <strong>S/ 1,331</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Transparencia de la Información</h3>
-                <p>La ley exige que las entidades financieras informen de manera clara y estandarizada todos los costos asociados a un crédito. Esto incluye la <strong>Tasa de Costo Efectivo Anual (TCEA)</strong>, que agrupa no solo la tasa de interés, sino también comisiones, seguros y otros gastos, permitiendo al consumidor comparar diferentes productos financieros de manera informada.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Cálculo de Intereses Moratorios y Compensatorios</h3>
-                <p>La regulación también estipula cómo deben calcularse los intereses. El <strong>interés compensatorio</strong> es el que se paga por el uso normal del dinero. El <strong>interés moratorio</strong> es una penalidad que se aplica únicamente sobre el monto de la cuota impaga cuando el deudor se atrasa, y no sobre el saldo total del capital, para evitar un cobro excesivo.</p>
+                <h3 class="text-xl font-bold mb-2">Visualización del Crecimiento</h3>
+                <p>El gráfico a continuación muestra claramente cómo el interés compuesto (línea verde) supera al interés simple (línea azul) con el tiempo, gracias al efecto de la capitalización.</p>
+                <div class="mt-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                    <canvas id="interesChart"></canvas>
+                </div>
             </div>
         </section>
 
