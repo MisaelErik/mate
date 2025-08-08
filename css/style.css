@@ -121,7 +121,7 @@ body.dark-mode .formula {
 }
 
 .solution {
-    display: none;
+    /* Elimina display: none; */
     margin-top: 1.5rem;
     padding: 2rem;
     background-color: var(--solution-bg-light);

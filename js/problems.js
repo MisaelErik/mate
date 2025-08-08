@@ -1,4 +1,4 @@
-const simpleProblems = [
+window.simpleProblems = [
   {
             "id": "s1",
             "question": "Halle el interés simple que generó un principal de 4 000 um, colocado en un banco a una TNA de 0,36 durante 6 días.",
@@ -146,7 +146,7 @@ const simpleProblems = [
         }
 ];
 
-const compoundProblems = [
+window.compoundProblems = [
     {
             "id": "c1",
             "question": "¿Qué monto compuesto habrá acumulado una persona en una cuenta de ahorros, del 4 al 16 de octubre del mismo año, si percibe una TEM de 0,03, y su depósito inicial fue 2 500 um? ¿Cuál es el FSC?",
@@ -240,7 +240,7 @@ const compoundProblems = [
         {
             "id": "c20",
             "question": "¿Cuánto interés se pagará por un préstamo de 6 000 um que devenga una TET de 0,02? El crédito se utilizó durante 17 días.",
-            "solution": "\n\t\t\t<div class=\"solution-grid\">\n\t\t\t\t<div>\n\t\t\t\t\t<h5 class=\"font-semibold\">Datos</h5>\n\t\t\t\t\t<ul class=\"list-disc list-inside text-sm\">\n\t\t\t\t\t\t<li>P = 6.000 um</li>\n\t\t\t\t\t\t<li>i = 0,02 (TET)</li>\n\t\t\t\t\t\t<li>n = 17 días</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<h5 class=\"font-semibold\">Fórmula</h5>\n\t\t\t\t\t<div class=\"formula !my-2\">\n\t\t\t\t\t\t<img src=\"https://latex.codecogs.com/svg.image?I%20%3D%20P%5B(1%2Bi)%5En-1%5D\" alt=\"Fórmula de interés compuesto\" />\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-span-full\">\n\t\t\t\t\t<h5 class=\"font-semibold\">Desarrollo</h5>\n\t\t\t\t\t<p class=\"text-sm\">La tasa efectiva diaria es <img src=\"https://latex.codecogs.com/svg.image?i_d%20%3D%20(1%2B0%2C02)%5E%7B1%2F90%7D-1%3D0%2C0002206\" alt=\"Cálculo de la tasa efectiva diaria\" />. <img src=\"https://latex.codecogs.com/svg.image?I%20%3D%206000%5Ctimes((1%2C0002206)%5E%7B17%7D-1)%3D6000%5Ctimes(1%2C003756-1)%3D6000%5Ctimes0%2C003756\" alt=\"Cálculo del interés\" />.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"result-box\">\n\t\t\t\t\t<p class=\"font-bold\">Resultado: I = <strong>22.54 um</strong></p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t"
+            "solution": "\n\t\t\t<div class=\"solution-grid\">\n\t\t\t\t<div>\n\t\t\t\t\t<h5 class=\"font-semibold\">Datos</h5>\n\t\t\t\t\t<ul class=\"list-disc list-inside text-sm\">\n\t\t\t\t\t\t<li>P = 6.000 um</li>\n\t\t\t\t\t\t<li>i = 0,02 (TET)</li>\n\t\t\t\t\t\t<li>n = 17 días</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<h5 class=\"font-semibold\">Fórmula</h5>\n\t\t\t\t\t<div class=\"formula !my-2\">\n\t\t\t\t\t\t<img src=\"https://latex.codecogs.com/svg.image?I%20%3D%20P%5B(1%2Bi)%5En-1%5D\" alt=\"Fórmula de interés compuesto\" />\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-span-full\">\n\t\t\t\t\t<h5 class=\"font-semibold\">Desarrollo</h5>\n\t\t\t\t\t<p class=\"text-sm\">La tasa efectiva diaria es <img src=\"https://latex.codecogs.com/svg.image?i_d%20%3D%20(1%2B0%2C02)%5E%7B1%2F90%7D-1%3D0%2C0002206\" alt=\"Cálculo de la tasa diaria del primer período\" />; <img src=\"https://latex.codecogs.com/svg.image?I%20%3D%206000%5Ctimes((1%2C0002206)%5E%7B17%7D-1)%3D6000%5Ctimes(1%2C003756-1)%3D6000%5Ctimes0%2C003756\" alt=\"Cálculo del interés\" />.</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"result-box\">\n\t\t\t\t\t<p class=\"font-bold\">Resultado: I = <strong>22.54 um</strong></p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t"
         },
         {
             "id": "c21",
@@ -305,643 +305,126 @@ const compoundProblems = [
     {
         id: 'c33',
         question: '¿En cuántos trimestres un principal de 5 000 um ganará un interés de 630,81 um colocado en un banco a una TNA de 0,24 con capitalización mensual?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 5.000 um</li>
-                        <li>I = 630,81 um</li>
-                        <li>j = 0,24 (TNA)</li>
-                        <li>Capitalización = mensual</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.image?n=\frac{\log(S/P)}{\log(1+i)}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Calculamos el monto: <img src="https://latex.codecogs.com/svg.image?S=P+I=5000+630,81=5630,81" />. La tasa efectiva mensual es <img src="https://latex.codecogs.com/svg.image?i_m=\frac{0,24}{12}=0,02" />. El resultado será en meses. <img src="https://latex.codecogs.com/svg.image?n_m=\frac{\log(5630,81/5000)}{\log(1,02)}=6" /> meses. Convertimos a trimestres: <img src="https://latex.codecogs.com/svg.image?n_t=\frac{6}{3}=2" /> trimestres.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: n = <strong>2 trimestres</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 5.000 um</li>\n                        <li>I = 630,81 um</li>\n                        <li>j = 0,24 (TNA)</li>\n                        <li>Capitalización = mensual</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.image?n=\\frac{\\log(S/P)}{\\log(1+i)}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Calculamos el monto: <img src=\"https://latex.codecogs.com/svg.image?S=P+I=5000+630,81=5630,81\" />. La tasa efectiva mensual es <img src=\"https://latex.codecogs.com/svg.image?i_m=\\frac{0,24}{12}=0,02\" />. El resultado será en meses. <img src=\"https://latex.codecogs.com/svg.image?n_m=\\frac{\\log(5630,81/5000)}{\\log(1,02)}=6\" /> meses. Convertimos a trimestres: <img src=\"https://latex.codecogs.com/svg.image?n_t=\\frac{6}{3}=2\" /> trimestres.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: n = <strong>2 trimestres</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'c34',
         question: 'Calcule el interés de un principal que devenga una TEA de 0,12 y se convirtió en un monto de 10 000 um en el plazo de medio año.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 10.000 um</li>
-                        <li>i = 0,12 (TEA)</li>
-                        <li>n = medio año = 0,5 años</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.image?I=S-P=S-S(1+i)^{-n}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Calculamos el principal: <img src="https://latex.codecogs.com/svg.image?P=10000\cdot(1,12)^{-0,5}=10000\cdot0,944911=9449,11" />. <img src="https://latex.codecogs.com/svg.image?I=10000-9449,11" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: I = <strong>550.89 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 10.000 um</li>\n                        <li>i = 0,12 (TEA)</li>\n                        <li>n = medio año = 0,5 años</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.image?I=S-P=S-S(1+i)^{-n}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Calculamos el principal: <img src=\"https://latex.codecogs.com/svg.image?P=10000\\cdot(1,12)^{-0,5}=10000\\cdot0,944911=9449,11\" />. <img src=\"https://latex.codecogs.com/svg.image?I=10000-9449,11\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: I = <strong>550.89 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'c35',
         question: '¿Qué tiempo debe transcurrir para que la relación entre un principal de 8 000 um colocado a una TEM de 0,04 y su monto, sea 4/10?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 8.000 um</li>
-                        <li>i = 0,04 (TEM)</li>
-                        <li>P/S = 4/10</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.image?n=\frac{\log(S/P)}{\log(1+i)}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">La relación P/S=4/10 es equivalente a <img src="https://latex.codecogs.com/svg.image?S/P=10/4=2,5" />. <img src="https://latex.codecogs.com/svg.image?n=\frac{\log(2,5)}{\log(1,04)}=\frac{0,39794}{0,01703}=23,36" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: n = <strong>23.36 meses</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 8.000 um</li>\n                        <li>i = 0,04 (TEM)</li>\n                        <li>P/S = 4/10</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.image?n=\\frac{\\log(S/P)}{\\log(1+i)}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">La relación P/S=4/10 es equivalente a <img src=\"https://latex.codecogs.com/svg.image?S/P=10/4=2,5\" />. <img src=\"https://latex.codecogs.com/svg.image?n=\\frac{\\log(2,5)}{\\log(1,04)}=\\frac{0,39794}{0,01703}=23,36\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: n = <strong>23.36 meses</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'c36',
         question: 'Una deuda de 300 000 um devenga una TNQ (quincenal) de 0,005 capitalizable semanalmente. Las fechas de inicio y término de esta operación fueron el 31 de marzo y 18 de junio del mismo año. Calcule el monto de la operación y el valor de la tasa efectiva del período de la operación.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 300.000 um</li>
-                        <li>j = 0,005 (TNQ)</li>
-                        <li>Capitalización = semanal (7 días)</li>
-                        <li>Fechas: 31 de marzo a 18 de junio</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.image?S=P(1+i)^n" />
-                    </div>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.image?i_e=(1+i)^n-1" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Días: junio(30) + julio(31) + agosto(31) + sept(30) + oct(1) = 93 días. Tasa efectiva del período de capitalización (7 días): <img src="https://latex.codecogs.com/svg.image?i=0,005\cdot\frac{7}{15}=0,002333" />. Número de períodos: <img src="https://latex.codecogs.com/svg.image?n=\frac{79}{7}=11,2857" />. <img src="https://latex.codecogs.com/svg.image?i_e=(1+0,002333)^{11,2857}-1=1,0267-1=0,0267" />. <img src="https://latex.codecogs.com/svg.image?S=300000\cdot(1,0267)=308010" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: S = <strong>308,010 um</strong>, Tasa efectiva = <strong>0.0267</strong></p>
-                </div>
-            </div>
-        `
-    },
-    // ... más problemas de interés compuesto
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 300.000 um</li>\n                        <li>j = 0,005 (TNQ)</li>\n                        <li>Capitalización = semanal (7 días)</li>\n                        <li>Fechas: 31 de marzo a 18 de junio</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.image?S=P(1+i)^n\" />\n                    </div>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.image?i_e=(1+i)^n-1\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Días: junio(30) + julio(31) + agosto(31) + sept(30) + oct(1) = 93 días. Tasa efectiva del período de capitalización (7 días): <img src=\"https://latex.codecogs.com/svg.image?i=0,005\\cdot\\frac{7}{15}=0,002333\" />. Número de períodos: <img src=\"https://latex.codecogs.com/svg.image?n=\\frac{79}{7}=11,2857\" />. <img src=\"https://latex.codecogs.com/svg.image?i_e=(1+0,002333)^{11,2857}-1=1,0267-1=0,0267\" />. <img src=\"https://latex.codecogs.com/svg.image?S=300000\\cdot(1,0267)=308010\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: S = <strong>308,010 um</strong>, Tasa efectiva = <strong>0.0267</strong></p>\n                </div>\n            </div>\n        "
+    }
 ];
 
-const anualidadesVencidasProblems = [
+window.anualidadesVencidasProblems = [
     {
         id: 'av1',
         question: 'Una persona deposita 100 um al final de cada mes durante 12 meses en una cuenta que paga una TEM de 0.01. ¿Cuánto acumulará al final del año?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>R = 100 um</li>
-                        <li>i = 0.01 (TEM)</li>
-                        <li>n = 12 meses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?S=R[\frac{(1+i)^n-1}{i}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula del monto de una anualidad vencida: <img src="https://latex.codecogs.com/svg.latex?S=100[\frac{(1+0.01)^{12}-1}{0.01}] = 100[12.6825] = 1268.25" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: S = <strong>1,268.25 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R = 100 um</li>\n                        <li>i = 0.01 (TEM)</li>\n                        <li>n = 12 meses</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?S=R[\\frac{(1+i)^n-1}{i}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula del monto de una anualidad vencida: <img src=\"https://latex.codecogs.com/svg.latex?S=100[\\frac{(1+0.01)^{12}-1}{0.01}] = 100[12.6825] = 1268.25\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: S = <strong>1,268.25 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'av2',
         question: '¿Cuál es el valor presente de una serie de 24 pagos mensuales vencidos de 50 um, si la tasa de interés es una TEM de 0.015?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>R = 50 um</li>
-                        <li>i = 0.015 (TEM)</li>
-                        <li>n = 24 meses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?P=R[\frac{(1+i)^n-1}{i(1+i)^n}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula del valor presente de una anualidad vencida: <img src="https://latex.codecogs.com/svg.latex?P=50[\frac{(1+0.015)^{24}-1}{0.015(1+0.015)^{24}}] = 50[20.0304] = 1001.52" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: P = <strong>1,001.52 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R = 50 um</li>\n                        <li>i = 0.015 (TEM)</li>\n                        <li>n = 24 meses</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?P=R[\\frac{(1+i)^n-1}{i(1+i)^n}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula del valor presente de una anualidad vencida: <img src=\"https://latex.codecogs.com/svg.latex?P=50[\\frac{(1+0.015)^{24}-1}{0.015(1+0.015)^{24}}] = 50[20.0304] = 1001.52\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: P = <strong>1,001.52 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'av3',
         question: 'Se obtiene un préstamo de 10,000 um a una TEA de 0.10 para ser pagado en 36 cuotas mensuales vencidas. Calcule el valor de cada cuota.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 10.000 um</li>
-                        <li>TEA = 0.10</li>
-                        <li>n = 36 meses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?R=P[\frac{i(1+i)^n}{(1+i)^n-1}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Convertimos la TEA a TEM: <img src="https://latex.codecogs.com/svg.latex?i_{TEM}=(1+0.10)^{(1/12)}-1=0.007974" />. Aplicamos la fórmula de la renta de una anualidad vencida: <img src="https://latex.codecogs.com/svg.latex?R=10000[\frac{0.007974(1+0.007974)^{36}}{(1+0.007974)^{36}-1}] = 10000[0.03226] = 322.60" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: R = <strong>322.60 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 10.000 um</li>\n                        <li>TEA = 0.10</li>\n                        <li>n = 36 meses</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?R=P[\\frac{i(1+i)^n}{(1+i)^n-1}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Convertimos la TEA a TEM: <img src=\"https://latex.codecogs.com/svg.latex?i_{TEM}=(1+0.10)^{(1/12)}-1=0.007974\" />. Aplicamos la fórmula de la renta de una anualidad vencida: <img src=\"https://latex.codecogs.com/svg.latex?R=10000[\\frac{0.007974(1+0.007974)^{36}}{(1+0.007974)^{36}-1}] = 10000[0.03226] = 322.60\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: R = <strong>322.60 um</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const anualidadesAnticipadasProblems = [
+window.anualidadesAnticipadasProblems = [
     {
         id: 'aa1',
         question: 'Se depositan 200 um al inicio de cada mes durante 18 meses en una cuenta que paga una TEM de 0.008. ¿Cuánto se acumulará al final del período?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>Rₐ = 200 um</li>
-                        <li>i = 0.008 (TEM)</li>
-                        <li>n = 18 meses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula del monto de una anualidad anticipada: <img src="https://latex.codecogs.com/svg.latex?S=200[(1+0.008)\times\frac{(1+0.008)^{18}-1}{0.008}] = 200[1.008 \times 19.478] = 3926.56" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: S = <strong>3,926.56 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R\\u208a = 200 um</li>\n                        <li>i = 0.008 (TEM)</li>\n                        <li>n = 18 meses</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\\times\\frac{(1+i)^{n}-1}{i}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula del monto de una anualidad anticipada: <img src=\"https://latex.codecogs.com/svg.latex?S=200[(1+0.008)\\times\\frac{(1+0.008)^{18}-1}{0.008}] = 200[1.008 \\times 19.478] = 3926.56\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: S = <strong>3,926.56 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'aa2',
         question: 'Calcule el valor presente de 12 pagos trimestrales anticipados de 150 um, si la tasa de interés es una TET de 0.025.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>Rₐ = 150 um</li>
-                        <li>i = 0.025 (TET)</li>
-                        <li>n = 12 trimestres</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?P=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula del valor presente de una anualidad anticipada: <img src="https://latex.codecogs.com/svg.latex?P=150[(1+0.025)\times\frac{(1+0.025)^{12}-1}{0.025(1+0.025)^{12}}] = 150[1.025 \times 9.292] = 1429.99" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: P = <strong>1,429.99 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R\\u208a = 150 um</li>\n                        <li>i = 0.025 (TET)</li>\n                        <li>n = 12 trimestres</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?P=R_{a}[(1+i)\\times\\frac{(1+i)^{n}-1}{i(1+i)^{n}}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula del valor presente de una anualidad anticipada: <img src=\"https://latex.codecogs.com/svg.latex?P=150[(1+0.025)\\times\\frac{(1+0.025)^{12}-1}{0.025(1+0.025)^{12}}] = 150[1.025 \\times 9.292] = 1429.99\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: P = <strong>1,429.99 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'aa3',
         question: 'Se desea acumular 5,000 um en 24 meses realizando depósitos mensuales anticipados. Si la cuenta paga una TEM de 0.007, ¿cuál debe ser el valor de cada depósito?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 5.000 um</li>
-                        <li>i = 0.007 (TEM)</li>
-                        <li>n = 24 meses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?R_{a}=S[(1+i)^{-1}\times\frac{i}{(1+i)^{n}-1}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula de la renta anticipada a partir de S: <img src="https://latex.codecogs.com/svg.latex?R_{a}=5000[(1+0.007)^{-1}\times\frac{0.007}{(1+0.007)^{24}-1}] = 5000[0.99304 \times 0.0385] = 191.26" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: Rₐ = <strong>191.26 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 5.000 um</li>\n                        <li>i = 0.007 (TEM)</li>\n                        <li>n = 24 meses</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?R_{a}=S[(1+i)^{-1}\\times\\frac{i}{(1+i)^{n}-1}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula de la renta anticipada a partir de S: <img src=\"https://latex.codecogs.com/svg.latex?R_{a}=5000[(1+0.007)^{-1}\\times\\frac{0.007}{(1+0.007)^{24}-1}] = 5000[0.99304 \\times 0.0385] = 191.26\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: R\\u208a = <strong>191.26 um</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const anualidadesDiferidasProblems = [
+window.anualidadesDiferidasProblems = [
     {
         id: 'ad1',
         question: 'Calcule el valor presente de 10 rentas trimestrales vencidas de 300 um, si los primeros 2 trimestres son diferidos. La TEA aplicada es 0.12.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>R = 300 um</li>
-                        <li>n = 10 trimestres</li>
-                        <li>k = 2 trimestres</li>
-                        <li>TEA = 0.12</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?P=R[\frac{1}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Convertimos la TEA a TET: <img src="https://latex.codecogs.com/svg.latex?i_{TET}=(1+0.12)^{(1/4)}-1=0.028737" />. Aplicamos la fórmula del valor presente de una anualidad diferida vencida: <img src="https://latex.codecogs.com/svg.latex?P=300[\frac{1}{(1+0.028737)^{2}}\times\frac{(1+0.028737)^{10}-1}{0.028737(1+0.028737)^{10}}] = 300[0.9441 \times 8.585] = 2427.09" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: P = <strong>2,427.09 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R = 300 um</li>\n                        <li>n = 10 trimestres</li>\n                        <li>k = 2 trimestres</li>\n                        <li>TEA = 0.12</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?P=R[\\frac{1}{(1+i)^{k}}\\times\\frac{(1+i)^{n}-1}{i(1+i)^{n}}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Convertimos la TEA a TET: <img src=\"https://latex.codecogs.com/svg.latex?i_{TET}=(1+0.12)^{(1/4)}-1=0.028737\" />. Aplicamos la fórmula del valor presente de una anualidad diferida vencida: <img src=\"https://latex.codecogs.com/svg.latex?P=300[\\frac{1}{(1+0.028737)^{2}}\\times\\frac{(1+0.028737)^{10}-1}{0.028737(1+0.028737)^{10}}] = 300[0.9441 \\times 8.585] = 2427.09\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: P = <strong>2,427.09 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'ad2',
         question: 'Un préstamo de 15,000 um se pagará con cuotas mensuales vencidas durante 36 meses, con un período de gracia de 6 meses. La TEM es 0.01. Calcule el valor de cada cuota.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 15.000 um</li>
-                        <li>n = 36 meses</li>
-                        <li>k = 6 meses</li>
-                        <li>i = 0.01 (TEM)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?R=P[(1+i)^{k}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula de la renta a partir de P para anualidades diferidas vencidas: <img src="https://latex.codecogs.com/svg.latex?R=15000[(1+0.01)^{6}\times\frac{0.01(1+0.01)^{36}}{(1+0.01)^{36}-1}] = 15000[1.0615 \times 0.0334] = 532.09" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: R = <strong>532.09 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 15.000 um</li>\n                        <li>n = 36 meses</li>\n                        <li>k = 6 meses</li>\n                        <li>i = 0.01 (TEM)</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?R=P[(1+i)^{k}\\times\\frac{i(1+i)^{n}}{(1+i)^{n}-1}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula de la renta a partir de P para anualidades diferidas vencidas: <img src=\"https://latex.codecogs.com/svg.latex?R=15000[(1+0.01)^{6}\\times\\frac{0.01(1+0.01)^{36}}{(1+0.01)^{36}-1}] = 15000[1.0615 \\times 0.0334] = 532.09\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: R = <strong>532.09 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'ad3',
         question: '¿Cuánto debe depositarse hoy para poder retirar 500 um al inicio de cada mes durante 24 meses, si el primer retiro se realiza después de 3 meses? La TEM es 0.009.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>Rₐ = 500 um</li>
-                        <li>n = 24 meses</li>
-                        <li>k = 3 meses</li>
-                        <li>i = 0.009 (TEM)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?P=R_{a}[\frac{1+i}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula del valor presente de una anualidad diferida anticipada: <img src="https://latex.codecogs.com/svg.latex?P=500[\frac{1+0.009}{(1+0.009)^{3}}\times\frac{(1+0.009)^{24}-1}{0.009(1+0.009)^{24}}] = 500[0.9735 \times 21.50] = 10500.13" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: P = <strong>10,500.13 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>R\\u208a = 500 um</li>\n                        <li>n = 24 meses</li>\n                        <li>k = 3 meses</li>\n                        <li>i = 0.009 (TEM)</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?P=R_{a}[\\frac{1+i}{(1+i)^{k}}\\times\\frac{(1+i)^{n}-1}{i(1+i)^{n}}]\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula del valor presente de una anualidad diferida anticipada: <img src=\"https://latex.codecogs.com/svg.latex?P=500[\\frac{1+0.009}{(1+0.009)^{3}}\\times\\frac{(1+0.009)^{24}-1}{0.009(1+0.009)^{24}}] = 500[0.9735 \\times 21.50] = 10500.13\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: P = <strong>10,500.13 um</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const descuentoProblems = [
+window.descuentoProblems = [
     {
         id: 'd1',
         question: 'Una letra de cambio de 1,000 um se descuenta 60 días antes de su vencimiento. Si se aplica una TNA de 0.18, ¿cuál es el descuento racional simple?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 1.000 um</li>
-                        <li>j = 0.18 (TNA)</li>
-                        <li>n = 60 días</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?D_{RS}=\frac{Sjn}{1+jn}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Convertimos el tiempo a años: <img src="https://latex.codecogs.com/svg.latex?n=\frac{60}{360}" />. Aplicamos la fórmula del descuento racional simple: <img src="https://latex.codecogs.com/svg.latex?D_{RS}=\frac{1000 \cdot 0.18 \cdot (60/360)}{1+0.18 \cdot (60/360)} = \frac{30}{1.03} = 29.13" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: D = <strong>29.13 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 1.000 um</li>\n                        <li>j = 0.18 (TNA)</li>\n                        <li>n = 60 días</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?D_{RS}=\\frac{Sjn}{1+jn}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Convertimos el tiempo a años: <img src=\"https://latex.codecogs.com/svg.latex?n=\\frac{60}{360}\" />. Aplicamos la fórmula del descuento racional simple: <img src=\"https://latex.codecogs.com/svg.latex?D_{RS}=\\frac{1000 \\cdot 0.18 \\cdot (60/360)}{1+0.18 \\cdot (60/360)} = \\frac{30}{1.03} = 29.13\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: D = <strong>29.13 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'd2',
         question: 'Calcule el valor líquido de una letra de 2,000 um que se descuenta 90 días antes de su vencimiento, con una TEM de 0.012. (Descuento Racional Compuesto)',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 2.000 um</li>
-                        <li>i = 0.012 (TEM)</li>
-                        <li>n = 90 días</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?P=S(1+i)^{-n}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Convertimos el tiempo a meses: <img src="https://latex.codecogs.com/svg.latex?n=\frac{90}{30}=3" />. Aplicamos la fórmula del valor presente: <img src="https://latex.codecogs.com/svg.latex?P=2000(1+0.012)^{-3} = 2000(0.9649) = 1929.80" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: P = <strong>1,929.80 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 2.000 um</li>\n                        <li>i = 0.012 (TEM)</li>\n                        <li>n = 90 días</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?P=S(1+i)^{-n}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Convertimos el tiempo a meses: <img src=\"https://latex.codecogs.com/svg.latex?n=\\frac{90}{30}=3\" />. Aplicamos la fórmula del valor presente: <img src=\"https://latex.codecogs.com/svg.latex?P=2000(1+0.012)^{-3} = 2000(0.9649) = 1929.80\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: P = <strong>1,929.80 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'd3',
         question: 'Un pagaré de 500 um se descuenta 45 días antes de su vencimiento a una tasa adelantada nominal mensual de 0.02. Calcule el descuento bancario simple.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 500 um</li>
-                        <li>d = 0.02 (nominal mensual)</li>
-                        <li>n = 45 días</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?D_{BS}=Sdn" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Convertimos el tiempo a meses: <img src="https://latex.codecogs.com/svg.latex?n=\frac{45}{30}=1.5" />. Aplicamos la fórmula del descuento bancario simple: <img src="https://latex.codecogs.com/svg.latex?D_{BS}=500 \cdot 0.02 \cdot 1.5 = 15" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: D = <strong>15.00 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 500 um</li>\n                        <li>d = 0.02 (nominal mensual)</li>\n                        <li>n = 45 días</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?D_{BS}=Sdn\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Convertimos el tiempo a meses: <img src=\"https://latex.codecogs.com/svg.latex?n=\\frac{45}{30}=1.5\" />. Aplicamos la fórmula del descuento bancario simple: <img src=\"https://latex.codecogs.com/svg.latex?D_{BS}=500 \\cdot 0.02 \\cdot 1.5 = 15\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: D = <strong>15.00 um</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const inflacionProblems = [
+window.inflacionProblems = [
     {
         id: 'i1',
         question: 'Si el IPC de enero fue 110 y el de febrero fue 112.2, ¿cuál fue la tasa de inflación de febrero?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>IP₀ = 110</li>
-                        <li>IPn = 112.2</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?\pi = \frac{IP_{n}}{IP_{0}} - 1" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula de la inflación a partir de índices de precios: <img src="https://latex.codecogs.com/svg.latex?\pi = \frac{112.2}{110} - 1 = 1.02 - 1 = 0.02" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: &pi; = <strong>2%</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>IP\\u2080 = 110</li>\n                        <li>IPn = 112.2</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?\\pi = \\frac{IP_{n}}{IP_{0}} - 1\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula de la inflación a partir de índices de precios: <img src=\"https://latex.codecogs.com/svg.latex?\\pi = \\frac{112.2}{110} - 1 = 1.02 - 1 = 0.02\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: &pi; = <strong>2%</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'i2',
         question: 'Un producto costaba 50 um hace un año. Hoy cuesta 55 um. ¿Cuál ha sido la tasa de inflación anual?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>Precio inicial = 50 um</li>
-                        <li>Precio final = 55 um</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?\pi = \frac{Precio_{final}}{Precio_{inicial}} - 1" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula de la inflación: <img src="https://latex.codecogs.com/svg.latex?\pi = \frac{55}{50} - 1 = 1.1 - 1 = 0.10" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: &pi; = <strong>10%</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>Precio inicial = 50 um</li>\n                        <li>Precio final = 55 um</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?\\pi = \\frac{Precio_{final}}{Precio_{inicial}} - 1\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula de la inflación: <img src=\"https://latex.codecogs.com/svg.latex?\\pi = \\frac{55}{50} - 1 = 1.1 - 1 = 0.10\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: &pi; = <strong>10%</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'i3',
         question: 'Si la tasa de interés nominal es 0.05 y la tasa de inflación es 0.02, ¿cuál es la tasa de interés real?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>i_f = 0.05</li>
-                        <li>&pi; = 0.02</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmula</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?r=\frac{i_{f}-\pi}{1+\pi}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Aplicamos la fórmula de la tasa real: <img src="https://latex.codecogs.com/svg.latex?r=\frac{0.05-0.02}{1+0.02} = \frac{0.03}{1.02} = 0.02941" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: r = <strong>2.94%</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>i_f = 0.05</li>\n                        <li>\\pi = 0.02</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmula</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?r=\\frac{i_{f}-\\pi}{1+\\pi}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Aplicamos la fórmula de la tasa real: <img src=\"https://latex.codecogs.com/svg.latex?r=\\frac{0.05-0.02}{1+0.02} = \\frac{0.03}{1.02} = 0.02941\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: r = <strong>2.94%</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const comparacionProblems = [
+window.comparacionProblems = [
     {
         id: 'comp1',
         question: 'Compare el monto final de una inversión de 1,000 um a 5 años con una tasa anual de 0.08, usando interés simple y compuesto.',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>P = 1.000 um</li>
-                        <li>i = 0.08 (anual)</li>
-                        <li>n = 5 años</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmulas</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?S_{simple}=P(1+jn)" />
-                    </div>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?S_{compuesto}=P(1+i)^n" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Interés Simple: <img src="https://latex.codecogs.com/svg.latex?S_{simple}=1000(1+0.08 \cdot 5) = 1000(1.4) = 1400" />.</p>
-                    <p class="text-sm">Interés Compuesto: <img src="https://latex.codecogs.com/svg.latex?S_{compuesto}=1000(1+0.08)^5 = 1000(1.4693) = 1469.30" />.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: Simple = <strong>1,400 um</strong>, Compuesto = <strong>1,469.30 um</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>P = 1.000 um</li>\n                        <li>i = 0.08 (anual)</li>\n                        <li>n = 5 años</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmulas</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?S_{simple}=P(1+jn)\" />\n                    </div>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?S_{compuesto}=P(1+i)^n\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Interés Simple: <img src=\"https://latex.codecogs.com/svg.latex?S_{simple}=1000(1+0.08 \\cdot 5) = 1000(1.4) = 1400\" />.</p>\n                    <p class=\"text-sm\">Interés Compuesto: <img src=\"https://latex.codecogs.com/svg.latex?S_{compuesto}=1000(1+0.08)^5 = 1000(1.4693) = 1469.30\" />.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: Simple = <strong>1,400 um</strong>, Compuesto = <strong>1,469.30 um</strong></p>\n                </div>\n            </div>\n        "
     },
     {
         id: 'comp2',
         question: '¿En qué tiempo se duplica un capital con interés simple a una TNA de 0.10, y con interés compuesto a una TEA de 0.10?',
-        solution: `
-            <div class="solution-grid">
-                <div>
-                    <h5 class="font-semibold">Datos</h5>
-                    <ul class="list-disc list-inside text-sm">
-                        <li>S = 2P</li>
-                        <li>j/i = 0.10</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-semibold">Fórmulas</h5>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?n_{simple}=\frac{S/P-1}{j}" />
-                    </div>
-                    <div class="formula !my-2">
-                        <img src="https://latex.codecogs.com/svg.latex?n_{compuesto}=\frac{Log(S/P)}{Log(1+i)}" />
-                    </div>
-                </div>
-                <div class="col-span-full">
-                    <h5 class="font-semibold">Desarrollo</h5>
-                    <p class="text-sm">Interés Simple: <img src="https://latex.codecogs.com/svg.latex?n_{simple}=\frac{2-1}{0.10} = 10" /> años.</p>
-                    <p class="text-sm">Interés Compuesto: <img src="https://latex.codecogs.com/svg.latex?n_{compuesto}=\frac{Log(2)}{Log(1.10)} = \frac{0.30103}{0.04139} = 7.27" /> años.</p>
-                </div>
-                <div class="result-box">
-                    <p class="font-bold">Resultado: Simple = <strong>10 años</strong>, Compuesto = <strong>7.27 años</strong></p>
-                </div>
-            </div>
-        `
+        solution: "\n            <div class=\"solution-grid\">\n                <div>\n                    <h5 class=\"font-semibold\">Datos</h5>\n                    <ul class=\"list-disc list-inside text-sm\">\n                        <li>S = 2P</li>\n                        <li>j/i = 0.10</li>\n                    </ul>\n                </div>\n                <div>\n                    <h5 class=\"font-semibold\">Fórmulas</h5>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?n_{simple}=\\frac{S/P-1}{j}\" />\n                    </div>\n                    <div class=\"formula !my-2\">\n                        <img src=\"https://latex.codecogs.com/svg.latex?n_{compuesto}=\\frac{Log(S/P)}{Log(1+i)}\" />\n                    </div>\n                </div>\n                <div class=\"col-span-full\">\n                    <h5 class=\"font-semibold\">Desarrollo</h5>\n                    <p class=\"text-sm\">Interés Simple: <img src=\"https://latex.codecogs.com/svg.latex?n_{simple}=\\frac{2-1}{0.10} = 10\" /> años.</p>\n                    <p class=\"text-sm\">Interés Compuesto: <img src=\"https://latex.codecogs.com/svg.latex?n_{compuesto}=\\frac{Log(2)}{Log(1.10)} = \\frac{0.30103}{0.04139} = 7.27\" /> años.</p>\n                </div>\n                <div class=\"result-box\">\n                    <p class=\"font-bold\">Resultado: Simple = <strong>10 años</strong>, Compuesto = <strong>7.27 años</strong></p>\n                </div>\n            </div>\n        "
     }
 ];
 
-const pdfProblems = [];
+window.pdfProblems = [];
