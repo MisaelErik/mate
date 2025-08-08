@@ -7,25 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .section-card {
-            background-color: var(--card-bg-light);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow-light);
-            margin-bottom: 2.5rem;
-        }
-        body.dark-mode .section-card {
-            background-color: var(--card-bg-dark);
-            box-shadow: var(--card-shadow-dark);
-        }
-        .sub-section {
-            border-left: 3px solid #3b82f6;
-            padding-left: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-    </style>
 </head>
 <body class="text-gray-800">
 
@@ -40,7 +21,9 @@
                 <a href="index.html" class="text-blue-600 font-semibold">Inicio</a>
                 <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
                 <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="anualidades-vencidas.html" class="text-gray-600 hover:text-blue-600 transition">Anualidades</a>
                 <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <a href="inflacion.html" class="text-gray-600 hover:text-blue-600 transition">Inflación</a>
                 <a href="comparacion.html" class="text-gray-600 hover:text-blue-600 transition">Comparación</a>
                 <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
             </div>
@@ -50,6 +33,9 @@
             <a href="index.html" class="block text-blue-600 font-semibold">Inicio</a>
             <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
             <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <a href="descuento.html" class="block text-gray-600 hover:text-blue-600 transition">Descuento</a>
+            <a href="inflacion.html" class="block text-gray-600 hover:text-blue-600 transition">Inflación</a>
+            <a href="comparacion.html" class="block text-gray-600 hover:text-blue-600 transition">Comparación</a>
             <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
         </div>
     </header>
@@ -60,65 +46,205 @@
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">Un recurso de nivel profesional para dominar los conceptos y aplicaciones del interés y descuento.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <a href="interes-simple.html" class="section-card text-center hover:scale-105 transition-transform">
                 <i data-lucide="align-start-horizontal" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
                 <h2 class="text-2xl font-bold">Interés Simple</h2>
-                <p>Explore la teoría y los problemas del interés simple, desde casos básicos hasta escenarios con capital y tasas variables.</p>
+                <p>Fundamentos del interés, capital, monto y ecuaciones de equivalencia.</p>
             </a>
             <a href="interes-compuesto.html" class="section-card text-center hover:scale-105 transition-transform">
                 <i data-lucide="trending-up" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
                 <h2 class="text-2xl font-bold">Interés Compuesto</h2>
-                <p>Sumérjase en el poder de la capitalización. Domine los cálculos de monto e interés en diversos escenarios.</p>
+                <p>El poder de la capitalización y el cálculo de tasas efectivas.</p>
+            </a>
+            <a href="anualidades-vencidas.html" class="section-card text-center hover:scale-105 transition-transform">
+                <i data-lucide="layers" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                <h2 class="text-2xl font-bold">Anualidades</h2>
+                <p>Cálculo de rentas, valor presente y futuro de series de pagos.</p>
+            </a>
+            <a href="descuento.html" class="section-card text-center hover:scale-105 transition-transform">
+                <i data-lucide="receipt" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                <h2 class="text-2xl font-bold">Descuento</h2>
+                <p>Operaciones de descuento racional y bancario para anticipar liquidez.</p>
+            </a>
+            <a href="inflacion.html" class="section-card text-center hover:scale-105 transition-transform">
+                <i data-lucide="scale" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                <h2 class="text-2xl font-bold">Inflación y Tasa Real</h2>
+                <p>Cómo la inflación afecta el valor del dinero y el cálculo de la rentabilidad real.</p>
+            </a>
+            <a href="#glosario" class="section-card text-center hover:scale-105 transition-transform">
+                <i data-lucide="book-open" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                <h2 class="text-2xl font-bold">Glosario</h2>
+                <p>Un diccionario completo de todos los símbolos y variables financieras.</p>
+            </a>
+            <a href="#resumen-formulas" class="section-card text-center hover:scale-105 transition-transform">
+                <i data-lucide="book-marked" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                <h2 class="text-2xl font-bold">Formulario</h2>
+                <p>Todas las fórmulas clave en un solo lugar para una referencia rápida.</p>
             </a>
         </div>
 
-        <section id="comparacion-interes" class="section-card">
-            <h2><i data-lucide="git-compare" class="inline-block mr-3"></i>Interés Simple vs. Interés Compuesto</h2>
-            <p class="mb-4">La diferencia fundamental radica en la <strong>capitalización</strong>. En el interés simple, los intereses se calculan siempre sobre el capital inicial. En el interés compuesto, los intereses generados se suman al capital en cada período, generando nuevos intereses sobre un monto mayor.</p>
-            
-            <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Ejemplo Práctico</h3>
-                <p>Imagina que inviertes <strong>S/ 1,000</strong> a una tasa del <strong>10% anual</strong> durante <strong>3 años</strong>.</p>
-                <div class="grid md:grid-cols-2 gap-6 mt-4">
-                    <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
-                        <h4 class="font-bold text-blue-700 dark:text-blue-300">Con Interés Simple:</h4>
-                        <ul class="list-disc list-inside mt-2 text-sm">
-                            <li>Año 1: Ganas S/ 100 (10% de 1,000). Total: S/ 1,100.</li>
-                            <li>Año 2: Ganas S/ 100 (10% de 1,000). Total: S/ 1,200.</li>
-                            <li>Año 3: Ganas S/ 100 (10% de 1,000). Total: <strong>S/ 1,300</strong>.</li>
-                        </ul>
-                    </div>
-                    <div class="p-4 bg-green-50 dark:bg-green-900 rounded-lg">
-                        <h4 class="font-bold text-green-700 dark:text-green-300">Con Interés Compuesto:</h4>
-                        <ul class="list-disc list-inside mt-2 text-sm">
-                            <li>Año 1: Ganas S/ 100 (10% de 1,000). Total: S/ 1,100.</li>
-                            <li>Año 2: Ganas S/ 110 (10% de 1,100). Total: S/ 1,210.</li>
-                            <li>Año 3: Ganas S/ 121 (10% de 1,210). Total: <strong>S/ 1,331</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <section id="glosario" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario Rápido</h2>
+            <ul class="list-disc list-inside grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 mt-4">
+                <li><strong>D:</strong> Descuento</li>
+                <li><strong>d:</strong> Tasa de descuento (anticipada)</li>
+                <li><strong>g:</strong> Tasa de crecimiento del gradiente geométrico</li>
+                <li><strong>G:</strong> Gradiente aritmético (importe fijo)</li>
+                <li><strong>i:</strong> Tasa de interés efectiva</li>
+                <li><strong>I:</strong> Importe del Interés</li>
+                <li><strong>j:</strong> Tasa de interés nominal</li>
+                <li><strong>k:</strong> Período de gracia o diferido</li>
+                <li><strong>m:</strong> Frecuencia de capitalización</li>
+                <li><strong>n:</strong> Número de períodos</li>
+                <li><strong>P:</strong> Principal o Valor Presente</li>
+                <li><strong>&pi;:</strong> Tasa de inflación</li>
+                <li><strong>r:</strong> Tasa de interés real</li>
+                <li><strong>R:</strong> Renta (cuota) vencida</li>
+                <li><strong>R&#x2090;:</strong> Renta (cuota) anticipada</li>
+                <li><strong>S:</strong> Monto o Valor Futuro</li>
+            </ul>
+        </section>
 
-            <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Visualización del Crecimiento</h3>
-                <p>El gráfico a continuación muestra claramente cómo el interés compuesto (línea verde) supera al interés simple (línea azul) con el tiempo, gracias al efecto de la capitalización.</p>
-                <div class="mt-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-                    <canvas id="interesChart"></canvas>
+        <section id="resumen-formulas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-marked" class="inline-block mr-3"></i>Compendio Completo de Fórmulas Financieras</h2>
+            <div class="space-y-8">
+
+                <!-- Interés Simple -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">1. Interés Simple</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Interés:</td><td><img src="https://latex.codecogs.com/svg.latex?I=Pjn"/></td></tr>
+                        <tr><td>Monto:</td><td><img src="https://latex.codecogs.com/svg.latex?S=P[1+jn]"/></td></tr>
+                        <tr><td>Principal:</td><td><img src="https://latex.codecogs.com/svg.latex?P=\frac{S}{1+jn}"/></td></tr>
+                        <tr><td>Interés (P constante, j variable):</td><td><img src="https://latex.codecogs.com/svg.latex?I=P\sum_{k=1}^{z}[j_{k}n_{k}]"/></td></tr>
+                        <tr><td>Interés (P variable, j constante):</td><td><img src="https://latex.codecogs.com/svg.latex?I=j\sum_{k=1}^{z}[P_{k-1}n_{k}]"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Interés Compuesto -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">2. Interés Compuesto</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Monto:</td><td><img src="https://latex.codecogs.com/svg.latex?S=P(1+i)^{n}"/></td></tr>
+                        <tr><td>Interés:</td><td><img src="https://latex.codecogs.com/svg.latex?I=P[(1+i)^{n}-1]"/></td></tr>
+                        <tr><td>Principal:</td><td><img src="https://latex.codecogs.com/svg.latex?P=S(1+i)^{-n}"/></td></tr>
+                        <tr><td>Monto (Tasa Nominal):</td><td><img src="https://latex.codecogs.com/svg.latex?S=P(1+\frac{j}{m})^{n}"/></td></tr>
+                        <tr><td>Monto (P constante, i variable):</td><td><img src="https://latex.codecogs.com/svg.latex?S=P[(1+i_{1})^{n_{1}}(1+i_{2})^{n_{2}}...]"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Descuento -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">3. Descuento</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Descuento Racional Simple:</td><td><img src="https://latex.codecogs.com/svg.latex?D_{RS}=\frac{Sjn}{1+jn}"/></td></tr>
+                        <tr><td>Descuento Racional Compuesto:</td><td><img src="https://latex.codecogs.com/svg.latex?D_{RC}=S[1-(1+i)^{-n}]"/></td></tr>
+                        <tr><td>Descuento Bancario Simple:</td><td><img src="https://latex.codecogs.com/svg.latex?D_{BS}=Sd_{n}n"/></td></tr>
+                        <tr><td>Descuento Bancario Compuesto:</td><td><img src="https://latex.codecogs.com/svg.latex?D_{BC}=S[1-(1-d_{e})^{n}]"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Tasas y Inflación -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">4. Tasas y Inflación</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>De Nominal (j) a Efectiva (i):</td><td><img src="https://latex.codecogs.com/svg.latex?i=(1+\frac{j}{m})^{n}-1"/></td></tr>
+                        <tr><td>De Efectiva (i) a Efectiva Equivalente (i'):</td><td><img src="https://latex.codecogs.com/svg.latex?i'=(1+i)^{plazo_{quiero}/plazo_{tengo}}-1"/></td></tr>
+                        <tr><td>Tasa Real (r):</td><td><img src="https://latex.codecogs.com/svg.latex?r=\frac{i_{f}-\pi}{1+\pi}"/></td></tr>
+                        <tr><td>Tasa Inflada (if):</td><td><img src="https://latex.codecogs.com/svg.latex?i_{f}=(1+r)(1+\pi)-1"/></td></tr>
+                        <tr><td>Tasa de Inflación (&pi;):</td><td><img src="https://latex.codecogs.com/svg.latex?\pi = \frac{IP_{n}}{IP_{0}} - 1"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Anualidades Simples Vencidas -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">5. Anualidades Simples Vencidas</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Monto (S):</td><td><img src="https://latex.codecogs.com/svg.latex?S=R[\frac{(1+i)^{n}-1}{i}]"/></td></tr>
+                        <tr><td>Valor Presente (P):</td><td><img src="https://latex.codecogs.com/svg.latex?P=R[\frac{(1+i)^{n}-1}{i(1+i)^{n}}]"/></td></tr>
+                        <tr><td>Renta a partir de S:</td><td><img src="https://latex.codecogs.com/svg.latex?R=S[\frac{i}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Renta a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?R=P[\frac{i(1+i)^{n}}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Cálculo de n a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?n=-\frac{Log[1-\frac{Pi}{R}]}{Log(1+i)}"/></td></tr>
+                        <tr><td>Cálculo de n a partir de S:</td><td><img src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{Si}{R}+1]}{Log(1+i)}"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Anualidades Simples Anticipadas -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">6. Anualidades Simples Anticipadas</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Monto (S):</td><td><img src="https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i}]"/></td></tr>
+                        <tr><td>Valor Presente (P):</td><td><img src="https://latex.codecogs.com/svg.latex?P=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]"/></td></tr>
+                        <tr><td>Renta a partir de S:</td><td><img src="https://latex.codecogs.com/svg.latex?R_{a}=S[(1+i)^{-1}\times\frac{i}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Renta a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?R_{a}=P[(1+i)^{-1}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Cálculo de n a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?n=-\frac{Log[1-\frac{Pi}{R_{a}(1+i)}]}{Log(1+i)}"/></td></tr>
+                        <tr><td>Cálculo de n a partir de S:</td><td><img src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{Si}{R_{a}(1+i)}+1]}{Log(1+i)}"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Anualidades Simples Diferidas Vencidas -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">7. Anualidades Simples Diferidas Vencidas</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Monto (S):</td><td><img src="https://latex.codecogs.com/svg.latex?S=R[\frac{(1+i)^{n}-1}{i}]"/></td></tr>
+                        <tr><td>Valor Presente (P):</td><td><img src="https://latex.codecogs.com/svg.latex?P=R[\frac{1}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]"/></td></tr>
+                        <tr><td>Renta a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?R=P[(1+i)^{k}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Cálculo de n a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{R}{R-Pi(1+i)^{k}}]}{Log(1+i)}"/></td></tr>
+                        <tr><td>Cálculo de k (períodos diferidos):</td><td><img src="https://latex.codecogs.com/svg.latex?k=\frac{Log\{\frac{R}{Pi}[1-\frac{1}{(1+i)^{n}}]\}}{Log(1+i)}"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Anualidades Simples Diferidas Anticipadas -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">8. Anualidades Simples Diferidas Anticipadas</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Monto (S):</td><td><img src="https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i}]"/></td></tr>
+                        <tr><td>Valor Presente (P):</td><td><img src="https://latex.codecogs.com/svg.latex?P=R_{a}[\frac{1+i}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]"/></td></tr>
+                        <tr><td>Renta a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?R_{a}=P[\frac{(1+i)^{k-1}}{1}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Cálculo de n a partir de P:</td><td><img src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{R_{a}}{R_{a}-Pi(1+i)^{k-1}}]}{Log(1+i)}"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Gradientes Aritméticos -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">9. Gradientes Aritméticos</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Valor Presente (P&#x2093;):</td><td><img src="https://latex.codecogs.com/svg.latex?P_{G}=G\{\frac{1}{i}[\frac{(1+i)^{n}-1}{i(1+i)^{n}}-\frac{n}{(1+i)^{n}}]\}"/></td></tr>
+                        <tr><td>Renta Equivalente (R&#x2093;):</td><td><img src="https://latex.codecogs.com/svg.latex?R_{G}=G[\frac{1}{i}-\frac{n}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Monto (S&#x2093;):</td><td><img src="https://latex.codecogs.com/svg.latex?S_{G}=G\{\frac{1}{i}[\frac{(1+i)^{n}-1}{i}-n]\}"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Gradientes Geométricos -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">10. Gradientes Geométricos</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Valor Presente (P&#x2089;):</td><td><img src="https://latex.codecogs.com/svg.latex?P_{g}=R\{\frac{1-(1+g)^{n}(1+i)^{-n}}{i-g}\}"/></td></tr>
+                        <tr><td>Monto (S&#x2089;):</td><td><img src="https://latex.codecogs.com/svg.latex?S_{g}=R[\frac{(1+i)^{n}-(1+g)^{n}}{i-g}]"/></td></tr>
+                    </tbody></table>
+                </div>
+
+                <!-- Métodos de Amortización -->
+                <div class="sub-section">
+                    <h3 class="text-xl font-bold mb-4">11. Métodos de Amortización</h3>
+                    <table class="formula-table text-sm w-full"><tbody>
+                        <tr><td>Método Francés (Cuota Constante):</td><td><img src="https://latex.codecogs.com/svg.latex?R=P[\frac{i(1+i)^{n}}{(1+i)^{n}-1}]"/></td></tr>
+                        <tr><td>Método Alemán (Amortización Constante):</td><td><img src="https://latex.codecogs.com/svg.latex?A = \frac{P}{n}, R_k = A + (\text{Saldo}_{k-1} \cdot i)"/></td></tr>
+                        <tr><td>Método Americano:</td><td><img src="https://latex.codecogs.com/svg.latex?R_k = P \cdot i, R_n = (P \cdot i) + P"/></td></tr>
+                        <tr><td>Método Bullet:</td><td><img src="https://latex.codecogs.com/svg.latex?S = P(1+i)^n"/></td></tr>
+                    </tbody></table>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="bg-gray-800 text-white text-center p-6 mt-12">
         <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 
 </body>
 </html>

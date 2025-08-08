@@ -8,19 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .section-card {
-            background-color: var(--card-bg-light);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow-light);
-            margin-bottom: 2.5rem;
-        }
-        body.dark-mode .section-card {
-            background-color: var(--card-bg-dark);
-            box-shadow: var(--card-shadow-dark);
-        }
-    </style>
 </head>
 <body class="text-gray-800">
 
@@ -72,66 +59,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        lucide.createIcons();
-
-        // Lógica del gráfico de comparación
-        document.addEventListener('DOMContentLoaded', () => {
-            const ctx = document.getElementById('interestChart')?.getContext('2d');
-            if (ctx) {
-                const principal = 1000;
-                const rate = 0.10; // 10%
-                const periods = 20;
-
-                let labels = [];
-                let simpleInterestData = [];
-                let compoundInterestData = [];
-
-                for (let i = 0; i <= periods; i++) {
-                    labels.push(`Año ${i}`);
-                    simpleInterestData.push(principal * (1 + rate * i));
-                    compoundInterestData.push(principal * Math.pow(1 + rate, i));
-                }
-
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Interés Compuesto',
-                            data: compoundInterestData,
-                            borderColor: '#2563eb',
-                            backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                            fill: true,
-                            tension: 0.1
-                        }, {
-                            label: 'Interés Simple',
-                            data: simpleInterestData,
-                            borderColor: '#4b5563',
-                            backgroundColor: 'rgba(75, 85, 99, 0.1)',
-                            fill: true,
-                            tension: 0.1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Crecimiento de S/ 1,000 al 10% Anual',
-                                font: { size: 18 }
-                            },
-                            tooltip: { mode: 'index', intersect: false }
-                        },
-                        scales: {
-                            y: { title: { display: true, text: 'Monto Total (S/)' } },
-                            x: { title: { display: true, text: 'Años' } }
-                        }
-                    }
-                });
-            }
-        });
-    </script>
 
 </body>
 </html>

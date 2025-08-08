@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidades Vencidas - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="anualidades-vencidas.html" class="text-blue-600 font-semibold">Anualidades</a>
+                <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <a href="anualidades-vencidas.html" class="block text-blue-600 font-semibold">Anualidades</a>
+            <a href="descuento.html" class="block text-gray-600 hover:text-blue-600 transition">Descuento</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Anualidades Vencidas</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Este es un tema crucial porque modela la mayoría de los productos financieros que usamos en la vida real, como préstamos, hipotecas y fondos de pensiones.</p>
+        </div>
+
+        <section id="teoria-anualidades" class="section-card">
+            <h2><i data-lucide="file-text" class="inline-block mr-3"></i>Teoría Ampliada: Anualidades Vencidas</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">1. ¿Qué es una Anualidad?</h3>
+                <p>Una <strong>anualidad</strong> es una serie de flujos de caja o pagos iguales que se realizan en intervalos de tiempo también iguales. A cada uno de estos pagos se le llama <strong>renta (R)</strong>. Aunque la palabra "anualidad" sugiere pagos anuales, en finanzas se usa para referirse a pagos con cualquier periodicidad fija: mensual, trimestral, semestral, etc.</p>
+                <p class="mt-4">Esta sección se enfoca en las <strong>anualidades vencidas</strong>, que son aquellas en las que los pagos o rentas se realizan al <strong>final</strong> de cada período.</p>
+                <h4 class="font-bold mt-6 mb-2">Ejemplos comunes de anualidades vencidas:</h4>
+                <ul class="list-disc list-inside pl-4">
+                    <li>Las cuotas de un préstamo hipotecario o vehicular.</li>
+                    <li>Los aportes a un fondo de pensiones en una AFP.</li>
+                    <li>El pago de un salario.</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">2. La Diferencia Clave: Anualidades Simples vs. Generales</h3>
+                <p>Esta es una distinción fundamental que debes entender para resolver cualquier tipo de problema.</p>
+                <div class="mt-4">
+                    <h4 class="font-bold">Anualidad Simple:</h4>
+                    <p>Es aquella donde el <strong>período de la renta coincide con el período de capitalización de la tasa de interés</strong>.</p>
+                    <p class="text-sm text-gray-600 pl-4 border-l-2 border-gray-300 mt-2"><strong>Ejemplo:</strong> Haces pagos <strong>mensuales</strong> y la tasa de interés que te aplican es una Tasa Efectiva <strong>Mensual</strong> (TEM). Como ambos períodos (pago y tasa) son mensuales, es una anualidad simple.</p>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-bold">Anualidad General:</h4>
+                    <p>Es aquella donde el <strong>período de la renta NO coincide con el período de capitalización de la tasa de interés</strong>.</p>
+                    <p class="text-sm text-gray-600 pl-4 border-l-2 border-gray-300 mt-2"><strong>Ejemplo:</strong> Haces pagos <strong>mensuales</strong>, pero la tasa de interés que te dan es una Tasa Efectiva <strong>Anual</strong> (TEA). Como los períodos no coinciden (mes vs. año), es una anualidad general.</p>
+                </div>
+                <div class="mt-6 bg-blue-50 dark:bg-gray-800 border border-blue-200 dark:border-blue-700 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-800 dark:text-blue-300">¿Cómo se resuelve una Anualidad General?</h4>
+                    <p class="mt-2">El truco es muy sencillo: <strong>siempre se convierte la anualidad general en una simple</strong>. Esto se hace en dos pasos:</p>
+                    <ol class="list-decimal list-inside mt-2 pl-4">
+                        <li><strong>Convertir la Tasa:</strong> Se calcula la tasa efectiva equivalente para el período que coincida con la frecuencia de la renta.</li>
+                        <li><strong>Resolver como Anualidad Simple:</strong> Una vez que tienes la tasa correcta, el problema se resuelve con las mismas fórmulas de una anualidad simple.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">3. Las 4 Herramientas de las Anualidades Vencidas (Factores Financieros)</h3>
+                
+                <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-xl font-semibold mb-2">a) Factor de Capitalización de la Serie (FCS) - Para calcular el Monto (S)</h4>
+                    <p>Esta fórmula toma una serie de rentas y calcula su valor futuro acumulado al final del último período. Responde a la pregunta: "¿Cuánto dinero tendré si deposito R cada período?".</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S=R[\frac{(1+i)^n-1}{i}]"/></div>
+                    <div class="example">
+                        <h5 class="font-bold">Problema de Ejemplo:</h5>
+                        <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Una persona aporta a su AFP el 10% de su sueldo de S/ 5,000 (es decir, S/ 500) cada fin de mes durante 10 años. Si el fondo rinde una TEA promedio de 4.48%, ¿cuánto acumulará en su cuenta personal?</blockquote>
+                        <p><strong>Resolución:</strong></p>
+                        <ol class="list-decimal list-inside ml-4 space-y-2">
+                            <li><strong>Identificar:</strong> Es una anualidad general (aportes mensuales, tasa anual). Debemos convertirla en simple.</li>
+                            <li><strong>Convertir la Tasa:</strong> Calculamos la TEM equivalente a una TEA de 4.48%. <br> <img src="https://latex.codecogs.com/svg.latex?i_{TEM}=(1+0.0448)^{(30/360)}-1=0.0036588" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                            <li><strong>Resolver:</strong> Ahora que tenemos la tasa mensual, podemos usar la fórmula del FCS.
+                                <ul class="list-disc list-inside ml-6">
+                                    <li>R = 500; i = 0.0036588; n = 10 años * 12 meses/año = 120 meses.</li>
+                                    <li><img src="https://latex.codecogs.com/svg.latex?S=500[\frac{(1+0.0036588)^{120}-1}{0.0036588}]=75,180" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> Acumulará <strong>S/ 75,180</strong> en su fondo.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-xl font-semibold mb-2">b) Factor de Actualización de la Serie (FAS) - Para calcular el Valor Presente (P)</h4>
+                    <p>Esta fórmula toma una serie de rentas futuras y calcula su valor equivalente en el día de hoy. Responde a la pregunta: "¿Cuánto vale hoy un conjunto de pagos futuros?" o "¿Qué préstamo puedo obtener si puedo pagar una cuota de R?".</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P=R[\frac{(1+i)^n-1}{i(1+i)^n}]"/></div>
+                    <div class="example">
+                        <h5 class="font-bold">Problema de Ejemplo:</h5>
+                        <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Se quiere comprar una laptop que se paga en 18 cuotas mensuales vencidas de S/ 200. Si la tienda aplica una TEM de 2%, ¿cuál es el precio al contado de la laptop?</blockquote>
+                        <p><strong>Resolución:</strong></p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li>Datos: R = 200; i = 0.02; n = 18.</li>
+                            <li>Aplicamos la fórmula del FAS: <br> <img src="https://latex.codecogs.com/svg.latex?P=200[\frac{(1+0.02)^{18}-1}{0.02(1+0.02)^{18}}]=2,998.40" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                        </ul>
+                        <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> El precio al contado de la laptop es <strong>S/ 2,998.40</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-xl font-semibold mb-2">c) Factor de Recuperación del Capital (FRC) - Para calcular la Renta (R) a partir de P</h4>
+                    <p>Esta es la fórmula más usada para calcular la cuota de un préstamo. Responde a la pregunta: "Si me prestan P hoy, ¿cuánto debo pagar cada período?".</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?R=P[\frac{i(1+i)^n}{(1+i)^n-1}]"/></div>
+                    <div class="example">
+                        <h5 class="font-bold">Problema de Ejemplo:</h5>
+                        <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Se financia un saldo de USD 10,000 de un automóvil para pagarlo en 12 cuotas mensuales vencidas. El banco aplica una TEA del 12%. Calcule la cuota mensual.</blockquote>
+                        <p><strong>Resolución:</strong></p>
+                        <ol class="list-decimal list-inside ml-4 space-y-2">
+                            <li><strong>Identificar:</strong> Anualidad general (pagos mensuales, tasa anual).</li>
+                            <li><strong>Convertir la Tasa:</strong> Calculamos la TEM equivalente a una TEA del 12%. <br> <img src="https://latex.codecogs.com/svg.latex?i_{TEM}=(1+0.12)^{(30/360)}-1=0.0094888" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                            <li><strong>Resolver:</strong> Ahora usamos la fórmula del FRC.
+                                <ul class="list-disc list-inside ml-6">
+                                    <li>P = 10,000; i = 0.0094888; n = 12.</li>
+                                    <li><img src="https://latex.codecogs.com/svg.latex?R=10000[\frac{0.0094888(1+0.0094888)^{12}}{(1+0.0094888)^{12}-1}]=885.62" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> La cuota mensual será de <strong>USD 885.62</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-xl font-semibold mb-2">d) Factor de Depósito al Fondo de Amortización (FDFA) - Para calcular la Renta (R) a partir de S</h4>
+                    <p>Esta fórmula calcula la cuota o depósito periódico necesario para alcanzar una meta de ahorro futura (S). Responde a la pregunta: "Si quiero tener S en el futuro, ¿cuánto debo depositar cada período?".</p>
+                    <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?R=S[\frac{i}{(1+i)^n-1}]"/></div>
+                    <div class="example">
+                        <h5 class="font-bold">Problema de Ejemplo:</h5>
+                        <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Se necesita acumular S/ 24,816.60 en 12 meses para la cuota inicial de una vivienda. ¿Qué cuota uniforme mensual se debe depositar en una cuenta que paga una TEA del 6.5%?</blockquote>
+                        <p><strong>Resolución:</strong></p>
+                        <ol class="list-decimal list-inside ml-4 space-y-2">
+                            <li><strong>Identificar:</strong> Anualidad general (depósitos mensuales, tasa anual).</li>
+                            <li><strong>Convertir la Tasa:</strong> Calculamos la TEM equivalente a una TEA del 6.5%. <br> <img src="https://latex.codecogs.com/svg.latex?i_{TEM}=(1+0.065)^{(30/360)}-1=0.0052617" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                            <li><strong>Resolver:</strong> Usamos la fórmula del FDFA.
+                                <ul class="list-disc list-inside ml-6">
+                                    <li>S = 24,816.60; i = 0.0052617; n = 12.</li>
+                                    <li><img src="https://latex.codecogs.com/svg.latex?R=24816.60[\frac{0.0052617}{(1+0.0052617)^{12}-1}]=2,008.88" class="inline-block my-2 bg-white p-2 rounded"/></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> Se debe depositar <strong>S/ 2,008.88</strong> cada mes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

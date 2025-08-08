@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA COMÚN PARA TODAS LAS PÁGINAS ---
-
+    lucide.createIcons();
     // 1. Switcher de Tema (Claro/Oscuro)
     const themeToggleButtons = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
     const body = document.body;
@@ -32,6 +32,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LÓGICA ESPECÍFICA POR PÁGINA ---
+
+    // Lógica del gráfico de comparación
+    const interestChartCanvas = document.getElementById('interestChart');
+    if (interestChartCanvas) {
+        const ctx = interestChartCanvas.getContext('2d');
+        const principal = 1000;
+        const rate = 0.10; // 10%
+        const periods = 20;
+
+        let labels = [];
+        let simpleInterestData = [];
+        let compoundInterestData = [];
+
+        for (let i = 0; i <= periods; i++) {
+            labels.push(`Año ${i}`);
+            simpleInterestData.push(principal * (1 + rate * i));
+            compoundInterestData.push(principal * Math.pow(1 + rate, i));
+        }
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Interés Compuesto',
+                    data: compoundInterestData,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    fill: true,
+                    tension: 0.1
+                }, {
+                    label: 'Interés Simple',
+                    data: simpleInterestData,
+                    borderColor: '#4b5563',
+                    backgroundColor: 'rgba(75, 85, 99, 0.1)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Crecimiento de S/ 1,000 al 10% Anual',
+                        font: { size: 18 }
+                    },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: { title: { display: true, text: 'Monto Total (S/)' } },
+                    x: { title: { display: true, text: 'Años' } }
+                }
+            }
+        });
+    }
 
     // Función para renderizar problemas
     const createProblemHTML = (problem, index) => {

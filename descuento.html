@@ -3,57 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descuento Bancario - Guía de Matemática Financiera</title>
+    <title>Descuento y Tasas - Guía de Matemática Financiera</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .section-card {
-            background-color: var(--card-bg-light);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow-light);
-            margin-bottom: 2.5rem;
-        }
-        body.dark-mode .section-card {
-            background-color: var(--card-bg-dark);
-            box-shadow: var(--card-shadow-dark);
-        }
-        .sub-section {
-            border-left: 3px solid #3b82f6;
-            padding-left: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        .formula-box {
-            background-color: var(--formula-bg-light);
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        body.dark-mode .formula-box {
-            background-color: var(--formula-bg-dark);
-        }
-        .formula-box img {
-            background: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        .example {
-            margin-top: 1rem;
-            padding: 1.5rem;
-            background-color: #f0f9ff;
-            border-left: 4px solid #3b82f6;
-            border-radius: 8px;
-        }
-        body.dark-mode .example {
-            background-color: #1e293b;
-            border-left-color: #60a5fa;
-        }
-    </style>
 </head>
 <body class="text-gray-800">
 
@@ -84,61 +37,169 @@
 
     <main class="container mx-auto px-6 py-12">
         <div class="text-center mb-16">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Descuento Bancario</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Teoría y aplicación de las operaciones de descuento, una herramienta clave para anticipar liquidez.</p>
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Teoría de Descuentos y Tasas</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Domina las operaciones de descuento y la conversión de tasas, herramientas clave para la gestión de liquidez y la evaluación de instrumentos financieros.</p>
         </div>
 
-        <section id="teoria-descuento" class="section-card">
-            <h2><i data-lucide="receipt" class="inline-block mr-3"></i>Fundamentos del Descuento</h2>
-            <p class="text-lg mb-6">El descuento es una operación financiera que consiste en **anticipar el valor de un título-valor** (como una letra de cambio o un pagaré) que tiene un vencimiento futuro. A cambio de adelantar el dinero, la entidad financiera cobra un interés por adelantado, el cual se denomina "descuento".</p>
-            
+        <!-- Descuento Racional -->
+        <section id="descuento-racional" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="arrow-down-circle" class="inline-block mr-3"></i>Descuento Racional: El Enfoque Matemático</h2>
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Variables Clave</h3>
-                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                    <li><strong>Valor Nominal (S):</strong> Es el valor escrito en el documento, el monto que se pagaría en la fecha de vencimiento.</li>
-                    <li><strong>Valor Actual o Líquido (P):</strong> Es el dinero que efectivamente se recibe hoy después de restar el descuento.</li>
-                    <li><strong>Descuento (D):</strong> Es el interés cobrado por adelantado por la entidad financiera. Se cumple que D = S - P.</li>
-                    <li><strong>Tasa de Descuento (d):</strong> Es la tasa de interés que se aplica para calcular el descuento.</li>
-                    <li><strong>Tiempo (n):</strong> Es el plazo que falta para el vencimiento del título, contado desde el día del descuento.</li>
-                </ul>
+                <h3 class="text-2xl font-bold mb-4">Teoría Completa</h3>
+                <p class="text-lg">El <strong>descuento</strong> es una operación que nos permite obtener hoy el valor de un monto que vence en el futuro. El <strong>Descuento Racional</strong>, también llamado "matemáticamente exacto", calcula el descuento (el interés) sobre el <strong>Valor Presente (P)</strong>, es decir, sobre el dinero que efectivamente recibimos. Es la contraparte del interés simple y compuesto.</p>
             </div>
 
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Tipos de Descuento</h3>
-                <p>Existen dos métodos principales para calcular el descuento, y la diferencia entre ellos es fundamental:</p>
-                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
-                    <li><strong>Descuento Racional (o Matemático):</strong> El descuento se calcula sobre el Valor Actual (P). Es el método más justo desde el punto de vista matemático, ya que el interés se calcula sobre el dinero que realmente se presta. Sin embargo, es el menos común en la práctica comercial.</li>
-                    <li><strong>Descuento Bancario (o Comercial):</strong> El descuento se calcula sobre el Valor Nominal (S) del título. Es el más utilizado por las entidades financieras porque genera un mayor rendimiento para ellas.</li>
-                </ul>
+                <h4 class="text-xl font-bold mb-2">1. Descuento Racional Simple</h4>
+                <p>Aplica la lógica del interés simple. El descuento se calcula como un interés simple sobre el valor presente del título.</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">Una letra de cambio con valor nominal de 5,000 um se descuenta 90 días antes de su vencimiento. Si se aplica una tasa nominal mensual (TNM) del 1.5%, ¿cuál es el descuento racional simple?</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: S = 5,000; j = 0.015 (mensual); n = 3 meses.</li>
+                        <li>Fórmula de Descuento Racional Simple: <img src="https://latex.codecogs.com/svg.latex?D_{RS}&space;=&space;\frac{Sjn}{1&plus;jn}" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?D_{RS}&space;=&space;\frac{5000&space;\cdot&space;0.015&space;\cdot&space;3}{1&space;&plus;&space;(0.015&space;\cdot&space;3)}&space;=&space;\frac{225}{1.045}&space;=&space;215.31&space;\text{&space;um}" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> El descuento es de 215.31 um. El valor líquido recibido es 5000 - 215.31 = 4784.69 um.</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="sub-section">
-                <h3 class="text-xl font-bold mb-2">Fórmulas y Ejemplo Comparativo</h3>
-                <p class="mb-4">Para ilustrar la diferencia, se descuenta una letra de S/ 10,000, 60 días antes de su vencimiento. La tasa de descuento anual (d) es del 18%.</p>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Descuento Racional -->
-                    <div>
-                        <h4 class="text-lg font-bold mb-2 text-gray-700">Descuento Racional</h4>
-                        <p class="mb-2">Fórmula de Valor Actual:</p>
-                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;\frac{S}{1&plus;d&space;\cdot&space;n}" /></div>
-                        <p><strong>Cálculo:</strong></p>
-                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;\frac{10000}{1&plus;(0.18&space;\cdot&space;\frac{60}{360})}&space;=&space;\frac{10000}{1.03}&space;=&space;9708.74" /></div>
-                        <p class="mt-2"><strong>Descuento (D = S - P):</strong> S/ 291.26</p>
-                    </div>
-                    <!-- Descuento Bancario -->
-                    <div>
-                        <h4 class="text-lg font-bold mb-2 text-gray-700">Descuento Bancario</h4>
-                        <p class="mb-2">Fórmula de Valor Actual:</p>
-                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;S(1-d&space;\cdot&space;n)" /></div>
-                        <p><strong>Cálculo:</strong></p>
-                        <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P&space;=&space;10000(1-0.18&space;\cdot&space;\frac{60}{360})&space;=&space;10000(0.97)&space;=&space;9700" /></div>
-                        <p class="mt-2"><strong>Descuento (D = S*d*n):</strong> S/ 300.00</p>
-                    </div>
+                <h4 class="text-xl font-bold mb-2">2. Descuento Racional Compuesto</h4>
+                <p>Aplica la lógica del interés compuesto. El descuento es la diferencia entre el valor nominal y su valor presente, calculado trayendo el monto futuro con una tasa de interés compuesta.</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">Se descuenta la misma letra de 5,000 um, 90 días antes, pero con una tasa efectiva mensual (TEM) del 1.5%. Calcule el descuento racional compuesto.</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: S = 5,000; i = 0.015 (efectiva mensual); n = 3 meses.</li>
+                        <li>Fórmula de Descuento Racional Compuesto: <img src="https://latex.codecogs.com/svg.latex?D_{RC}&space;=&space;S[1-(1&plus;i)^{-n}]" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?D_{RC}&space;=&space;5000[1&space;-&space;(1&plus;0.015)^{-3}]&space;=&space;5000[1&space;-&space;0.95634]&space;=&space;218.30&space;\text{&space;um}" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> El descuento es de 218.30 um. El valor líquido es 5000 - 218.30 = 4781.70 um.</li>
+                    </ul>
                 </div>
-                <div class="example mt-6">
-                    <p><strong>Conclusión del Ejemplo:</strong> Como se puede observar, el descuento bancario (S/ 300.00) es mayor que el racional (S/ 291.26). Esto significa que, con el método bancario, el cliente recibe menos dinero líquido (S/ 9,700 vs S/ 9,708.74). Esta diferencia ocurre porque la tasa de descuento bancario se aplica sobre un capital mayor (el Valor Nominal), lo que inherentemente genera un mayor rendimiento para la entidad financiera.</p>
+            </div>
+        </section>
+
+        <!-- Descuento Bancario -->
+        <section id="descuento-bancario" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="banknote" class="inline-block mr-3"></i>Descuento Bancario: El Estándar del Mercado</h2>
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">Teoría Completa</h3>
+                <p class="text-lg">El <strong>Descuento Bancario</strong> es el método preferido por las entidades financieras. Su característica clave es que el descuento se calcula sobre el <strong>Valor Nominal (S)</strong> del título, usando una <strong>tasa de descuento o tasa adelantada (d)</strong>. Esto resulta en un mayor rendimiento para el banco en comparación con el descuento racional.</p>
+            </div>
+
+            <div class="sub-section">
+                <h4 class="text-xl font-bold mb-2">1. Descuento Bancario Simple</h4>
+                <p>El descuento se calcula aplicando una tasa de descuento simple (nominal) sobre el valor nominal.</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">Una letra de 5,000 um se descuenta 90 días antes de vencer, con una tasa adelantada nominal mensual del 1.5%.</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: S = 5,000; d = 0.015 (nominal mensual); n = 3 meses.</li>
+                        <li>Fórmula de Descuento Bancario Simple: <img src="https://latex.codecogs.com/svg.latex?D_{BS}&space;=&space;S&space;\cdot&space;d&space;\cdot&space;n" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?D_{BS}&space;=&space;5000&space;\cdot&space;0.015&space;\cdot&space;3&space;=&space;225&space;\text{&space;um}" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> El descuento es de 225 um. El valor líquido es 5000 - 225 = 4775 um.</li>
+                    </ul>
                 </div>
+            </div>
+
+            <div class="sub-section">
+                <h4 class="text-xl font-bold mb-2">2. Descuento Bancario Compuesto</h4>
+                <p>Aplica una tasa de descuento efectiva de forma sucesiva sobre el saldo. Es menos común que el simple, pero conceptualmente importante.</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">La misma letra de 5,000 um se descuenta 90 días antes, con una tasa adelantada <strong>efectiva</strong> mensual del 1.5%.</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: S = 5,000; d = 0.015 (efectiva mensual); n = 3 meses.</li>
+                        <li>Fórmula de Descuento Bancario Compuesto: <img src="https://latex.codecogs.com/svg.latex?D_{BC}&space;=&space;S[1-(1-d)^n]" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?D_{BC}&space;=&space;5000[1&space;-&space;(1-0.015)^3]&space;=&space;221.64&space;\text{&space;um}" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> El descuento es de 221.64 um. El valor líquido es 5000 - 221.64 = 4778.36 um.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversión de Tasas -->
+        <section id="conversion-tasas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="percent-circle" class="inline-block mr-3"></i>Conversión de Tasas de Interés</h2>
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">Teoría Completa</h3>
+                <p class="text-lg">Es crucial que el período de la tasa de interés coincida con el período de los flujos de caja. Saber convertir tasas es una habilidad fundamental.</p>
+            </div>
+
+            <div class="sub-section">
+                <h4 class="text-xl font-bold mb-2">1. De Tasa Nominal (j) a Tasa Efectiva (i)</h4>
+                <p>Encuentra la tasa real (efectiva) que resulta de una tasa nominal capitalizable.</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">Calcule la tasa efectiva para 53 días si se aplica una TNA del 12% con capitalización trimestral.</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: j = 0.12 (anual); m = 4 (trimestres/año); n = 53/90 (plazo en trimestres).</li>
+                        <li>Fórmula: <img src="https://latex.codecogs.com/svg.latex?i&space;=&space;(1&space;&plus;&space;\frac{j}{m})^n&space;-&space;1" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?i&space;=&space;(1&space;&plus;&space;\frac{0.12}{4})^{(53/90)}&space;-&space;1&space;=&space;1.764%" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> La tasa efectiva para 53 días es 1.764%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h4 class="text-xl font-bold mb-2">2. Equivalencia entre Tasas Efectivas</h4>
+                <p>Convierte una tasa efectiva de un período a su equivalente en otro período (ej. TEA a TEM).</p>
+                <div class="example">
+                    <p class="font-bold">Problema de Ejemplo:</p>
+                    <p class="italic mt-2">Si la TEM es 5%, ¿qué tasa efectiva se aplica para 4 días?</p>
+                    <p class="mt-4"><strong>Resolución:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Datos: i = 0.05 (para 30 días); Quiero 4 días.</li>
+                        <li>Fórmula: <img src="https://latex.codecogs.com/svg.latex?i_{eq}&space;=&space;(1&plus;i)^{\frac{t_{quiero}}{t_{tengo}}}&space;-&space;1" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li>Cálculo: <img src="https://latex.codecogs.com/svg.latex?i_{eq}&space;=&space;(1&plus;0.05)^{(4/30)}&space;-&space;1&space;=&space;0.649%" class="inline-block align-middle bg-white p-1 rounded ml-2"></li>
+                        <li><strong>Respuesta:</strong> La tasa efectiva para 4 días es 0.649%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glosario -->
+        <section id="glosario-descuento" class="section-card">
+            <h2><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario de Términos</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                <div class="sub-section"><h3 class="font-bold">Valor Nominal (S)</h3><p>Valor del título en su fecha de vencimiento.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Valor Líquido (P)</h3><p>Dinero que se recibe en la fecha del descuento (P = S - D).</p></div>
+                <div class="sub-section"><h3 class="font-bold">Descuento (D)</h3><p>Interés cobrado por adelantado.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Tasa Vencida (i, j)</h3><p>Tasa que se aplica sobre un capital presente (P).</p></div>
+                <div class="sub-section"><h3 class="font-bold">Tasa Adelantada (d)</h3><p>Tasa que se aplica sobre un valor futuro (S).</p></div>
+                <div class="sub-section"><h3 class="font-bold">Tasa Nominal</h3><p>Tasa de referencia que requiere una frecuencia de capitalización.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Tasa Efectiva</h3><p>Tasa real que ya incluye la capitalización de intereses.</p></div>
+            </div>
+        </section>
+
+        <!-- Resumen de Fórmulas -->
+        <section id="resumen-formulas-descuento" class="section-card">
+            <h2><i data-lucide="book-marked" class="inline-block mr-3"></i>Compendio de Fórmulas</h2>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?D_{RS}=\frac{Sjn}{1+jn}" /></td><td class="px-6 py-4">Descuento Racional Simple</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?D_{RC}=S[1-(1+i)^{-n}]" /></td><td class="px-6 py-4">Descuento Racional Compuesto</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?D_{BS}=Sdn" /></td><td class="px-6 py-4">Descuento Bancario Simple</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?D_{BC}=S[1-(1-d)^n]" /></td><td class="px-6 py-4">Descuento Bancario Compuesto</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?i=(1+\frac{j}{m})^n-1" /></td><td class="px-6 py-4">Convertir Tasa Nominal a Efectiva</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?i_{eq}=(1+i)^{\frac{t_{q}}{t_{t}}}-1" /></td><td class="px-6 py-4">Tasa Efectiva Equivalente</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?d=\frac{i}{1+i}" /></td><td class="px-6 py-4">Convertir Tasa Vencida (i) a Adelantada (d)</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?i=\frac{d}{1-d}" /></td><td class="px-6 py-4">Convertir Tasa Adelantada (d) a Vencida (i)</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -149,9 +210,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 
 </body>
 </html>
