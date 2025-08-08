@@ -89,37 +89,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para renderizar problemas
-    const createProblemHTML = (problem, index) => {
-        return `
-            <div class="border-b pb-4 mb-4">
-                <h4 class="text-lg font-semibold mb-2">Problema ${index + 1}: ${problem.question}</h4>
-                <button onclick="toggleSolution('${problem.id}')" class="btn btn-secondary btn-sm">
-                    <i data-lucide="eye" class="mr-2 h-4 w-4"></i>Ver Solución
-                </button>
-                <div id="${problem.id}" class="solution mt-4">
-                    ${problem.solution}
-                </div>
+    // Función para crear el HTML de un problema
+    const createProblemElement = (problem, index) => {
+        const problemDiv = document.createElement('div');
+        problemDiv.className = 'border-b pb-4 mb-4';
+        problemDiv.innerHTML = `
+            <h4 class="text-lg font-semibold mb-2">Problema ${index + 1}: ${problem.question}</h4>
+            <button onclick="toggleSolution('${problem.id}')" class="btn btn-secondary btn-sm">
+                <i data-lucide="eye" class="mr-2 h-4 w-4"></i>Ver Solución
+            </button>
+            <div id="${problem.id}" class="solution mt-4 hidden">
+                ${problem.solution}
             </div>
         `;
+        return problemDiv;
     };
 
-    // Renderizar problemas de Interés Simple si estamos en la página correcta
-    const simpleProblemsContainer = document.getElementById('simple-problems-container');
-    if (typeof simpleProblems !== 'undefined' && simpleProblemsContainer) {
-        simpleProblems.forEach((problem, index) => {
-            simpleProblemsContainer.innerHTML += createProblemHTML(problem, index);
-        });
-    }
+    // Función genérica para renderizar problemas
+    const displayProblems = (problemsArray, containerId) => {
+        const container = document.getElementById(containerId);
+        if (typeof problemsArray !== 'undefined' && container) {
+            problemsArray.forEach((problem, index) => {
+                container.appendChild(createProblemElement(problem, index));
+            });
+        }
+    };
 
-    // Renderizar problemas de Interés Compuesto si estamos en la página correcta
-    const compoundProblemsContainer = document.getElementById('compound-problems-container');
-    if (typeof compoundProblems !== 'undefined' && compoundProblemsContainer) {
-        compoundProblems.forEach((problem, index) => {
-            compoundProblemsContainer.innerHTML += createProblemHTML(problem, index);
-        });
-    }
-    
+    // Renderizar problemas en las páginas correspondientes
+    displayProblems(simpleProblems, 'simple-problems-container');
+    displayProblems(compoundProblems, 'compound-problems-container');
+    displayProblems(anualidadesVencidasProblems, 'anualidades-vencidas-problems-container');
+    displayProblems(anualidadesAnticipadasProblems, 'anualidades-anticipadas-problems-container');
+    displayProblems(anualidadesDiferidasProblems, 'anualidades-diferidas-problems-container');
+    displayProblems(descuentoProblems, 'descuento-problems-container');
+    displayProblems(inflacionProblems, 'inflacion-problems-container');
+    displayProblems(comparacionProblems, 'comparacion-problems-container');
+
+
     // Re-inicializar Lucide Icons después de renderizar contenido dinámico
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
@@ -130,6 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleSolution(id) {
     const element = document.getElementById(id);
     if (element) {
-        element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+        element.classList.toggle('hidden');
     }
 }

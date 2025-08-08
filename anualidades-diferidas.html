@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidades Diferidas - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-blue-600 transition cursor-pointer flex items-center">
+                        Cursos <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-10">
+                        <a href="interes-simple.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Interés Simple</a>
+                        <a href="interes-compuesto.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Interés Compuesto</a>
+                        <a href="anualidades-vencidas.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Anualidades Vencidas</a>
+                        <a href="anualidades-anticipadas.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Anualidades Anticipadas</a>
+                        <a href="anualidades-diferidas.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Anualidades Diferidas</a>
+                        <a href="descuento.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Descuento</a>
+                        <a href="inflacion.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Inflación</a>
+                        <a href="comparacion.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Comparación</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <div class="relative group">
+                <button class="block text-gray-600 hover:text-blue-600 transition cursor-pointer flex items-center w-full text-left py-2">
+                    Cursos <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                </button>
+                <div class="hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-full">
+                    <a href="interes-simple.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Interés Simple</a>
+                    <a href="interes-compuesto.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Interés Compuesto</a>
+                    <a href="anualidades-vencidas.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Anualidades Vencidas</a>
+                    <a href="anualidades-anticipadas.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Anualidades Anticipadas</a>
+                    <a href="anualidades-diferidas.html" class="block text-blue-600 font-semibold">Anualidades Diferidas</a>
+                    <a href="descuento.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Descuento</a>
+                    <a href="inflacion.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Inflación</a>
+                    <a href="comparacion.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Comparación</a>
+                </div>
+            </div>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Anualidades Simples Diferidas</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">¡Excelente! Avanzamos a la <strong>Semana 10: Anualidades Simples Diferidas</strong>. Este tema combina lo que ya sabemos de anualidades con el concepto de un "período de gracia", algo muy común en préstamos estudiantiles o créditos comerciales.</p>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-4">Aquí tienes la teoría completa y ampliada, con problemas resueltos, y al final, como solicitaste, un resumen exclusivo de las fórmulas de esta semana.</p>
+        </div>
+
+        <section class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="file-text" class="inline-block mr-3"></i>Teoría Ampliada: Anualidades Simples Diferidas (Semana 10)</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">1. ¿Qué es una Anualidad Diferida?</h3>
+                <p class="text-lg">Una <strong>anualidad diferida</strong> es una serie de rentas (pagos o depósitos) cuyo inicio se pospone por un número determinado de períodos. En otras palabras, los pagos no empiezan en el siguiente período, sino que hay un tiempo de espera.</p>
+                <p class="text-lg mt-4">Toda anualidad diferida se compone de dos partes:</p>
+                <ol class="list-decimal list-inside ml-4 mt-2 space-y-2">
+                    <li><strong>Período de Gracia o Plazo Diferido (k):</strong> Es el lapso de tiempo inicial durante el cual <strong>no se realizan pagos</strong>. Sin embargo, si se trata de un préstamo, el capital inicial sigue generando intereses, por lo que la deuda crece durante este tiempo.</li>
+                    <li><strong>Período de Rentas (n):</strong> Es el lapso de tiempo en el que se efectúan las <code>n</code> rentas o pagos, que pueden ser vencidos o anticipados.</li>
+                </ol>
+                <h4 class="font-bold mt-6 mb-2">Ejemplos comunes:</h4>
+                <ul class="list-disc list-inside pl-4">
+                    <li>Préstamos estudiantiles donde empiezas a pagar 6 meses después de graduarte.</li>
+                    <li>Ofertas comerciales del tipo "compre hoy y empiece a pagar en 3 meses".</li>
+                    <li>Planes de jubilación donde aportas por un tiempo y comienzas a recibir tus rentas años después.</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">2. Anualidades Diferidas Vencidas</h3>
+                <p class="text-lg">Este es el caso más común. Pasa el período de gracia (<code>k</code>) y luego comienzan a realizarse <code>n</code> pagos al <strong>final</strong> de cada período.</p>
+                <p class="text-lg mt-4">La fórmula clave aquí es la del <strong>Valor Presente (P)</strong>. La lógica es simple: primero, se calcula el valor presente de la anualidad vencida normal (con el factor FAS) como si el primer pago fuera hoy. Esto nos da el valor de la anualidad al inicio de los pagos (al final del período <code>k</code>). Luego, ese valor se descuenta y se trae al presente (al momento 0) a través de todo el período de gracia.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P=R[\frac{1}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></div>
+                <div class="example mt-4">
+                    <h5 class="font-bold">Problema de Ejemplo:</h5>
+                    <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Calcule el valor presente de 20 rentas trimestrales vencidas de 2,500 um, si los primeros 4 trimestres son diferidos. La TEA aplicada es 0.15.</blockquote>
+                    <p><strong>Resolución:</strong></p>
+                    <ol class="list-decimal list-inside ml-4 space-y-2">
+                        <li><strong>Identificar:</strong> Es una anualidad general diferida vencida (rentas trimestrales, tasa anual). Debemos convertir la tasa.
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i_{TET} = (1 + 0.15)^{(90/360)} - 1 = 0.035558" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                        <li><strong>Datos:</strong> R = 2,500; i = 0.035558; n = 20 rentas; k = 4 períodos diferidos.</li>
+                        <li><strong>Aplicar la fórmula:</strong>
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P = 2500[\frac{1}{(1+0.035558)^{4}}\times\frac{(1+0.035558)^{20}-1}{0.035558(1+0.035558)^{20}}] = 2500[0.8690 \times 14.0701] = 30560.75 \text{ um}" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                    </ol>
+                    <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> El valor presente de esa anualidad diferida es de <strong>30,560.75 um</strong>.</p>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">3. Anualidades Diferidas Anticipadas</h3>
+                <p class="text-lg">En este caso, una vez transcurrido el período de gracia (<code>k</code>), comienzan a realizarse <code>n</code> pagos al <strong>inicio</strong> de cada período.</p>
+                <p class="text-lg mt-4">La lógica para calcular el Valor Presente es la misma que en el caso anterior: se calcula el valor de la anualidad anticipada al inicio de los pagos y luego se descuenta ese valor hasta el momento 0 a través del período de gracia.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P=R_{a}[\frac{1+i}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></div>
+                <div class="example mt-4">
+                    <h5 class="font-bold">Problema de Ejemplo:</h5>
+                    <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">¿Cuánto debe colocarse hoy en un banco para poder retirar, después de un año, una renta de 500 um al comienzo de cada mes durante los cinco años siguientes? La TEM es 0.02.</blockquote>
+                    <p><strong>Resolución:</strong></p>
+                    <ol class="list-decimal list-inside ml-4 space-y-2">
+                        <li><strong>Identificar:</strong> Es una anualidad simple diferida anticipada.</li>
+                        <li><strong>Datos:</strong> Rₐ = 500; i = 0.02 (TEM); El período de gracia es de 1 año, pero como las rentas son mensuales, el período de gracia <code>k</code> es de 12 meses. El período de rentas <code>n</code> es de 5 años, es decir, 60 meses.</li>
+                        <li><strong>Aplicar la fórmula:</strong>
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P = 500[\frac{1+0.02}{(1+0.02)^{12}}\times\frac{(1+0.02)^{60}-1}{0.02(1+0.02)^{60}}] = 500[0.8043 \times 34.7609] = 13980.31 \text{ um}" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                    </ol>
+                    <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> Se debe colocar hoy **13,980.31 um**.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="glosario-diferidas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario de Términos</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                <div class="sub-section"><h3 class="font-bold">Anualidad Diferida</h3><p>Serie de pagos cuyo inicio se pospone por un número de períodos.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Período de Gracia (k)</h3><p>Lapso inicial sin pagos, donde la deuda puede seguir generando intereses.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Período de Rentas (n)</h3><p>Lapso durante el cual se realizan los pagos o depósitos.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Anualidad Diferida Vencida</h3><p>Pagos al final de cada período después del período de gracia.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Anualidad Diferida Anticipada</h3><p>Pagos al inicio de cada período después del período de gracia.</p></div>
+            </div>
+        </section>
+
+        <section id="resumen-formulas-diferidas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-marked" class="inline-block mr-3"></i>Compendio de Fórmulas</h2>
+            
+            <h3 class="text-2xl font-bold mb-4">Diferidas Vencidas</h3>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?P=R[\frac{1}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></td><td class="px-6 py-4">Valor Presente (P)</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?R=P[(1+i)^{k}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]" /></td><td class="px-6 py-4">Renta a partir de P</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{R}{R-Pi(1+i)^{k}}]}{Log(1+i)}" /></td><td class="px-6 py-4">Cálculo de n</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?k=\frac{Log\{\frac{R}{Pi}[1-\frac{1}{(1+i)^{n}}]\}}{Log(1+i)}" /></td><td class="px-6 py-4">Cálculo de k (períodos diferidos)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4 mt-8">Diferidas Anticipadas</h3>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?P=R_{a}[\frac{1+i}{(1+i)^{k}}\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></td><td class="px-6 py-4">Valor Presente (P)</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?R_{a}=P[\frac{(1+i)^{k-1}}{1}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]" /></td><td class="px-6 py-4">Renta a partir de P</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{R_{a}}{R_{a}-Pi(1+i)^{k-1}}]}{Log(1+i)}" /></td><td class="px-6 py-4">Cálculo de n</td></tr>
+                        <tr><td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?k=\frac{Log\{\frac{R_{a}[(1+i)^{n}-1]}{Pi(1+i)^{n-1}}\}}{Log(1+i)}" /></td><td class="px-6 py-4">Cálculo de k</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <section id="problemas-anualidades-diferidas" class="section-card">
+            <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Anualidades Diferidas</h2>
+            <div id="anualidades-diferidas-problems-container" class="space-y-6"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/problems.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

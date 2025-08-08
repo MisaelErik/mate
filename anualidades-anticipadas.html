@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidades Anticipadas - Guía de Matemática Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">
+                <i data-lucide="book-open-check" class="inline-block mr-2"></i>
+                MatFin Pro
+            </div>
+            <div class="hidden md:flex space-x-4 text-lg items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Inicio</a>
+                <a href="interes-simple.html" class="text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+                <a href="interes-compuesto.html" class="text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+                <a href="anualidades-vencidas.html" class="text-gray-600 hover:text-blue-600 transition">Anualidades Vencidas</a>
+                <a href="anualidades-anticipadas.html" class="text-blue-600 font-semibold">Anualidades Anticipadas</a>
+                <a href="descuento.html" class="text-gray-600 hover:text-blue-600 transition">Descuento</a>
+                <a href="inflacion.html" class="text-gray-600 hover:text-blue-600 transition">Inflación</a>
+                <a href="comparacion.html" class="text-gray-600 hover:text-blue-600 transition">Comparación</a>
+                <button id="theme-toggle" class="btn btn-secondary ml-4">Tema</button>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden"><i data-lucide="menu"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-blue-600 transition">Inicio</a>
+            <a href="interes-simple.html" class="block text-gray-600 hover:text-blue-600 transition">I. Simple</a>
+            <a href="interes-compuesto.html" class="block text-gray-600 hover:text-blue-600 transition">I. Compuesto</a>
+            <a href="anualidades-vencidas.html" class="block text-gray-600 hover:text-blue-600 transition">Anualidades Vencidas</a>
+            <a href="anualidades-anticipadas.html" class="block text-blue-600 font-semibold">Anualidades Anticipadas</a>
+            <a href="descuento.html" class="block text-gray-600 hover:text-blue-600 transition">Descuento</a>
+            <a href="inflacion.html" class="block text-gray-600 hover:text-blue-600 transition">Inflación</a>
+            <a href="comparacion.html" class="block text-gray-600 hover:text-blue-600 transition">Comparación</a>
+            <button id="theme-toggle-mobile" class="btn btn-secondary w-full mt-2">Cambiar Tema</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Anualidades Simples Anticipadas</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">¡Excelente! Continuamos con la <strong>Semana 9: Anualidades Simples Anticipadas</strong>. Este tema es una variación importante del anterior y es clave para modelar operaciones como alquileres, seguros o cuotas iniciales.</p>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-4">Aquí tienes la teoría completa y ampliada, con problemas resueltos, y al final, como pediste, un compendio de todas las fórmulas de anualidades.</p>
+        </div>
+
+        <section class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="file-text" class="inline-block mr-3"></i>Teoría Ampliada: Anualidades Simples Anticipadas (Semana 9)</h2>
+            
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">1. ¿Qué es una Anualidad Anticipada?</h3>
+                <p class="text-lg">Una <strong>anualidad anticipada</strong> es una serie de pagos o rentas iguales y periódicas donde cada pago se realiza al <strong>inicio</strong> de cada período. Esto la diferencia fundamentalmente de la anualidad vencida, donde los pagos se hacen al final.</p>
+                <h4 class="font-bold mt-6 mb-2">Ejemplos comunes de anualidades anticipadas:</h4>
+                <ul class="list-disc list-inside pl-4">
+                    <li>El pago del alquiler de una casa o local comercial.</li>
+                    <li>El pago de las primas de una póliza de seguros.</li>
+                    <li>El pago de las pensiones de enseñanza.</li>
+                    <li>Compras a plazos que requieren una cuota inicial en el momento 0.</li>
+                </ul>
+                <p class="mt-4">La diferencia visual es clave:</p>
+                <ul class="list-disc list-inside pl-4">
+                    <li><strong>Vencida:</strong> El primer pago está en el punto "1" de la línea de tiempo.</li>
+                    <li><strong>Anticipada:</strong> El primer pago está en el punto "0" de la línea de tiempo.</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">2. La Clave de las Anualidades Anticipadas: El Factor (1+i)</h3>
+                <p class="text-lg">La relación entre una anualidad vencida y una anticipada es muy simple. Como cada pago en una anualidad anticipada se realiza un período antes, <strong>cada renta gana un período adicional de interés</strong> en comparación con una anualidad vencida.</p>
+                <p class="text-lg mt-4">Este "interés extra" se captura matemáticamente multiplicando la fórmula de la anualidad vencida equivalente por el factor de capitalización de un período: <strong>(1+i)</strong>.</p>
+                <p class="text-lg mt-4">Por lo tanto, si ya conoces las fórmulas de las anualidades vencidas, ¡ya casi sabes las de las anticipadas!</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="text-2xl font-bold mb-4">3. Fórmulas y Problemas de Anualidades Anticipadas</h3>
+
+                <h4 class="text-xl font-bold mb-2">a) Monto de una Anualidad Anticipada (S)</h4>
+                <p>Calcula el valor futuro de una serie de depósitos realizados al inicio de cada período.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i}]" /></div>
+                <div class="example mt-4">
+                    <h5 class="font-bold">Problema de Ejemplo:</h5>
+                    <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">En un cuatrimestre se efectúan depósitos de 1,000 um al inicio de cada mes. El banco paga una TNA de 0.09 capitalizable mensualmente. ¿Qué monto se acumulará al final del cuarto mes?</blockquote>
+                    <p><strong>Resolución:</strong></p>
+                    <ol class="list-decimal list-inside ml-4 space-y-2">
+                        <li><strong>Identificar:</strong> Es una anualidad simple anticipada, pues los depósitos son al inicio del mes y la capitalización es mensual.</li>
+                        <li><strong>Calcular la tasa:</strong> La TNA es 0.09 capitalizable mensualmente, por lo tanto, la TEM es <img src="https://latex.codecogs.com/svg.latex?i = 0.09 / 12 = 0.0075" class="inline-block align-middle bg-white p-1 rounded ml-2"/>.</li>
+                        <li><strong>Datos:</strong> R₂ = 1,000; i = 0.0075; n = 4 meses.</li>
+                        <li><strong>Aplicar la fórmula:</strong>
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?S = 1000[(1+0.0075)\times\frac{(1+0.0075)^{4}-1}{0.0075}] = 1000[1.0075 \times 4.04528] = 4075.62 \text{ um}" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                    </ol>
+                    <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> Se acumulará un monto de <strong>4,075.62 um</strong>.</p>
+                </div>
+
+                <h4 class="text-xl font-bold mb-2 mt-6">b) Valor Presente de una Anualidad Anticipada (P)</h4>
+                <p>Calcula el valor de contado (hoy) de una serie de pagos futuros que se realizan al inicio de cada período.</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></div>
+                <div class="example mt-4">
+                    <h5 class="font-bold">Problema de Ejemplo:</h5>
+                    <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">El alquiler de un local es 500 um, pagaderos al inicio de cada mes durante un año. Si se quisiera pagar hoy el año completo, ¿cuál sería el valor presente si se aplica una TEA de 0.15 como tasa de descuento?</blockquote>
+                    <p><strong>Resolución:</strong></p>
+                    <ol class="list-decimal list-inside ml-4 space-y-2">
+                        <li><strong>Identificar:</strong> Es una anualidad general anticipada (pagos mensuales, tasa anual). Debemos convertir la tasa.</li>
+                        <li><strong>Convertir la Tasa:</strong> Calculamos la TEM equivalente a una TEA de 0.15.
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i_{TEM} = (1 + 0.15)^{(30/360)} - 1 = 0.011715" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                        <li><strong>Datos:</strong> R₂ = 500; i = 0.011715; n = 12 meses.</li>
+                        <li><strong>Aplicar la fórmula:</strong>
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?P = 500[(1+0.011715)\times\frac{(1+0.011715)^{12}-1}{0.011715(1+0.011715)^{12}}] = 500[1.011715 \times 11.144] = 5637.38 \text{ um}" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                    </ol>
+                    <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> El valor presente de los 12 alquileres es de <strong>5,637.38 um</strong>.</p>
+                </div>
+
+                <h4 class="text-xl font-bold mb-2 mt-6">c) Renta Anticipada (R₂) a partir de P y S</h4>
+                <p>Calcula la cuota que se debe pagar al inicio de cada período para amortizar un préstamo (a partir de P) o para acumular un fondo (a partir de S).</p>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?R_{a}=P[(1+i)^{-1}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]" /></div>
+                <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?R_{a}=S[(1+i)^{-1}\times\frac{i}{(1+i)^{n}-1}]" /></div>
+                <div class="example mt-4">
+                    <h5 class="font-bold">Problema de Ejemplo:</h5>
+                    <blockquote class="text-gray-600 dark:text-gray-400 italic my-2 pl-4 border-l-4 border-gray-300 dark:border-gray-500">Un préstamo de 50,000 um debe cancelarse en un año con cuotas uniformes mensuales anticipadas. El préstamo devenga una TEB (bimestral) de 0.02. Calcule la cuota.</blockquote>
+                    <p><strong>Resolución:</strong></p>
+                    <ol class="list-decimal list-inside ml-4 space-y-2">
+                        <li><strong>Identificar:</strong> Anualidad general anticipada (pagos mensuales, tasa bimestral).</li>
+                        <li><strong>Convertir la Tasa:</strong> Calculamos la TEM equivalente a una TEB de 0.02.
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?i_{TEM} = (1 + 0.02)^{(1/2)} - 1 = 0.00995049" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                        <li><strong>Datos:</strong> P = 50,000; i = 0.00995049; n = 12 meses.</li>
+                        <li><strong>Aplicar la fórmula:</strong>
+                            <div class="formula-box"><img src="https://latex.codecogs.com/svg.latex?R_{a} = 50000[(1.00995049)^{-1}\times\frac{0.00995049(1.00995049)^{12}}{(1.00995049)^{12}-1}] = 50000[0.990147 \times 0.08882] = 4398.05 \text{ um}" class="inline-block align-middle bg-white p-1 rounded my-2"/></div>
+                        </li>
+                    </ol>
+                    <p class="font-bold mt-2 text-right text-blue-700 dark:text-blue-400"><strong>Respuesta:</strong> La cuota mensual anticipada es de <strong>4,398.05 um</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="glosario-anticipadas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-open" class="inline-block mr-3"></i>Glosario de Términos</h2>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-4">
+                <div class="sub-section"><h3 class="font-bold">Anualidad Anticipada</h3><p>Serie de pagos iguales al inicio de cada período.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Renta (R₂)</h3><p>El monto de cada pago periódico en una anualidad anticipada.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Factor (1+i)</h3><p>Multiplicador que ajusta las fórmulas de anualidades vencidas a anticipadas.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Valor Presente (P)</h3><p>El valor actual de una serie de pagos futuros.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Monto (S)</h3><p>El valor futuro acumulado de una serie de pagos.</p></div>
+                <div class="sub-section"><h3 class="font-bold">Período de Pago</h3><p>Intervalo de tiempo entre pagos consecutivos.</p></div>
+            </div>
+        </section>
+
+        <section id="resumen-formulas-anticipadas" class="section-card">
+            <h2 class="text-3xl font-bold mb-6"><i data-lucide="book-marked" class="inline-block mr-3"></i>Compendio de Fórmulas</h2>
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fórmula</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Descripción Corta</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-600 text-gray-700 dark:text-gray-300">
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?S=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i}]" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Monto de una Anualidad Anticipada.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?P=R_{a}[(1+i)\times\frac{(1+i)^{n}-1}{i(1+i)^{n}}]" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Valor Presente de una Anualidad Anticipada.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?R_{a}=S[(1+i)^{-1}\times\frac{i}{(1+i)^{n}-1}]" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Renta Anticipada a partir de Monto (S).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?R_{a}=P[(1+i)^{-1}\times\frac{i(1+i)^{n}}{(1+i)^{n}-1}]" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Renta Anticipada a partir de Valor Presente (P).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=-\frac{Log[1-\frac{Pi}{R_{a}(1+i)}]}{Log(1+i)}" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Cálculo de n a partir de P.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4"><img class="summary-formula-img" src="https://latex.codecogs.com/svg.latex?n=\frac{Log[\frac{Si}{R_{a}(1+i)}+1]}{Log(1+i)}" /></td>
+                            <td class="px-6 py-4 whitespace-nowrap">Cálculo de n a partir de S.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <section id="problemas-anualidades-anticipadas" class="section-card">
+            <h2><i data-lucide="clipboard-list" class="inline-block mr-3"></i>Problemas de Anualidades Anticipadas</h2>
+            <div id="anualidades-anticipadas-problems-container" class="space-y-6"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 | Guía Definitiva de Matemática Financiera.</p>
+    </footer>
+
+    <script src="js/problems.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
