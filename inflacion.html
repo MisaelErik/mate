@@ -273,11 +273,11 @@
     <script>
     // Espera a que el DOM esté listo
     document.addEventListener('DOMContentLoaded', function() {
-        // Verifica que el array de problemas exista
-        if (typeof compoundProblems !== 'undefined') {
+        // Verifica que el array de problemas de inflación exista
+        if (typeof inflacionProblems !== 'undefined') {
             const container = document.getElementById('inflacion-problems-container');
             if (container) {
-                container.innerHTML = compoundProblems.map((problem, idx) => `
+                container.innerHTML = inflacionProblems.map((problem, idx) => `
                     <div class="border-b pb-4 mb-4">
                         <h4 class="text-lg font-semibold mb-2">Problema ${idx + 1}: ${problem.question}</h4>
                         <button onclick="document.getElementById('solution-${problem.id}').classList.toggle('hidden')" class="btn btn-secondary btn-sm">
